@@ -8,6 +8,7 @@
       <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
       <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
       <link rel="stylesheet" type="text/css" href="app/css/stylesheet.css">
+      <link rel="stylesheet" type="text/css" href="app/css/react.css">
       <!-- Fonts -->
       <link href="https://fonts.googleapis.com/css?family=Playfair+Display:900i" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Fauna+One" rel="stylesheet">
@@ -34,10 +35,10 @@
 
   </head>
 
-  <body ng-controller="appCtrl">
+  <body ng-controller="appCtrl" class="light-purple">
     <!-- Header -->
     <nav class="navbar navbar-default navbar-fixed-top" id="navbar" role="navigation">
-        <div class="container-fluid dark-blue white-text">
+        <div class="container-fluid dark-purple white-text">
             <div class="col-md-offset-3 col-md-6 alert-modal-position">
                 <div uib-alert ng-repeat="alt in alert.alerts" ng-class="'alert-' + (alt.type)" close="alert.closeAlert($index)" dismiss-on-timeout="2000">{{alt.message}}</div>
             </div>

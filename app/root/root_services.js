@@ -106,6 +106,18 @@ app.factory('rootServices', function($http, $rootScope) {
         "inverted": false,
         "rating": 3.0
     }, {
+        "name": "Reverse Foot-to-Hand",
+        "difficulty": "intermediate",
+        "on": "hands",
+        "inverted": false,
+        "rating": 4.0
+    }, {
+        "name": "Reverse Extended Foot-to-Hand",
+        "difficulty": "advanced",
+        "on": "hands",
+        "inverted": false,
+        "rating": 3.0
+    }, {
         "name": "Shin-to-Foot",
         "difficulty": "beginner",
         "on": "feet",

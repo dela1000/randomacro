@@ -1,36 +1,40 @@
 <div class="main-section">
     <div>
-        <p class="roboto-font">Select a number of positions</p>
-    </div>
-    <div>
-      <form>
-        <input ng-model="formData.numberInput" name="" min="1" max="10" maxlength="2">
-        <br>
-        <input type="radio" value="beginner" ng-model="formData.level" checked> Beginner
-        <input type="radio" value="intermediate" ng-model="formData.level"> Intermediate 
-        <input type="radio" value="advanced" ng-model="formData.level"> Advanced
-        <input type="radio" value="all" ng-model="formData.level"> All
-      </form>
+        <form class="white-text">
+            <span class="input input--manami">
+          <input class="input__field input__field--manami" type="text" id="input-1" ng-model="formData.numberInput" name="" min="1" max="10" maxlength="2"  autocomplete="off">
+          <label class="input__label input__label--manami" for="input-1">
+            <span class="input__label-content input__label-content--manami">Select a number of positions</span>
+            </label>
+            </span>
+            <br>
+            <input type="radio" value="all" ng-model="formData.level"> All
+            <input type="radio" value="beginner" ng-model="formData.level" checked> Beginner
+            <input type="radio" value="intermediate" ng-model="formData.level"> Intermediate
+            <input type="radio" value="advanced" ng-model="formData.level"> Advanced
+        </form>
     </div>
     <div class="row">
-      <div ng-repeat="item in randomList track by $index">
-        <div class="col-md-4 margin-bottom-large">
-          <div class="bold"> 
-            {{item.name}}
-          </div>
-          <div> 
-            Flyer is on {{item.on}} and 
-              <span ng-show ="item.inverted">
-                inverted
-              </span>
-              <span ng-show ="!item.inverted">
-                not inverted
-              </span>
-          </div>
-          <div>
-            {{item.difficulty}}
-          </div>
+        <div ng-repeat="item in randomList track by $index">
+            <div class="col-md-3 margin-bottom-large">
+                <div class="positionPill">
+                    <div class="name huge-font align-center">
+                        {{item.name}}
+                    </div>
+                    <div class="details">
+                        Flyer is on {{item.on}} and
+                        <span ng-show="item.inverted">
+                  inverted
+                </span>
+                        <span ng-show="!item.inverted">
+                  not inverted
+                </span>
+                    </div>
+                    <div class="details">
+                        {{item.difficulty}}
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
 </div>

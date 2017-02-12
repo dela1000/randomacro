@@ -2,10 +2,13 @@ var app = angular.module('app');
 
 app.controller('rootController', function($scope, rootServices, alert) {
     $scope.formData = {};
-    $scope.formData.level = "beginner"
+    $scope.formData.level = "all"
 
     $scope.$watch('formData', function() {
-        if($scope.formData.numberInput < 2){
+        if($scope.formData.numberInput === 0 || $scope.formData.numberInput === "" || $scope.formData.numberInput === undefined || $scope.formData.numberInput === null){
+            $scope.randomList = [];
+        }
+        if($scope.formData.numberInput > 0 && $scope.formData.numberInput < 2){
             alert.addAlert("You want to move, right? Pick more than 1")
             return;
         }
