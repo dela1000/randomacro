@@ -7,18 +7,14 @@
         <input ng-model="formData.numberInput" name="" min="1" max="10" maxlength="2">
         <br>
         <input type="radio" value="beginner" ng-model="formData.level" checked> Beginner
-        <br>
         <input type="radio" value="intermediate" ng-model="formData.level"> Intermediate 
-        <br>
         <input type="radio" value="advanced" ng-model="formData.level"> Advanced
-        <br>
         <input type="radio" value="all" ng-model="formData.level"> All
-        <br>
       </form>
     </div>
     <div class="row">
       <div ng-repeat="item in randomList track by $index">
-        <div class="col-md-3 margin-bottom-large">
+        <div class="col-md-4 margin-bottom-large">
           <div class="bold"> 
             {{item.name}}
           </div>
