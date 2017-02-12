@@ -102,24 +102,20 @@ h1::first-letter {
 
 /*COLORS - Pallette from https://color.adobe.com/28X-Presidential-Poster-color-theme-7962511*/
 
-.dark-gray {
-    background-color: #59535E;
+.dark-blue {
+    background-color: #2C3E50;
+}
+
+.red {
+    background-color: #FC4349;
 }
 
 .light-gray {
-    background-color: #FAEEFF;
+    background-color: #D7DADB;
 }
 
-.pink {
-    background-color: #F1BAF3;
-}
-
-.light-purple {
-    background-color: #5D4970;
-}
-
-.dark-purple {
-    background-color: #372049;
+.light-blue {
+    background-color: #6DBCDB;
 }
 
 .white {
@@ -128,12 +124,6 @@ h1::first-letter {
 
 
 /*MAIN SECTION*/
-
-.seal {
-    margin: 20px;
-    width: 121px;
-    height: 121px;
-}
 
 .main-section {
     margin-top: 210px;
@@ -146,6 +136,10 @@ h1::first-letter {
 
 .pointer {
     cursor: pointer;
+}
+
+.alert-modal{
+    background-color: #FC4349;
 }
 
 .alert-modal-position {
@@ -162,7 +156,7 @@ h1::first-letter {
     width: auto;
     border: 1px solid;
     border-radius: 25px;
-    background-color: #FAEEFF;
+    background-color: #FFFFFF;
 }
 
 .positionPill .name {

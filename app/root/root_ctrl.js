@@ -12,8 +12,8 @@ app.controller('rootController', function($scope, rootServices, alert) {
             alert.addAlert("You want to move, right? Pick more than 1")
             return;
         }
-        if($scope.formData.numberInput > 10){
-            alert.addAlert("take it easy, champ. Pick less than 10")
+        if($scope.formData.numberInput > 8){
+            alert.addAlert("Take it easy, champ. Pick less than 10")
             return;
         }
         if ($scope.formData.numberInput) {

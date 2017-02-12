@@ -38,17 +38,12 @@
   <body ng-controller="appCtrl" class="light-purple">
     <!-- Header -->
     <nav class="navbar navbar-default navbar-fixed-top" id="navbar" role="navigation">
-        <div class="container-fluid dark-purple white-text">
+        <div class="container-fluid light-blue white-text">
             <div class="col-md-offset-3 col-md-6 alert-modal-position">
-                <div uib-alert ng-repeat="alt in alert.alerts" ng-class="'alert-' + (alt.type)" close="alert.closeAlert($index)" dismiss-on-timeout="2000">{{alt.message}}</div>
+                <div uib-alert ng-repeat="alt in alert.alerts" ng-class="'alert-' + (alt.type)" close="alert.closeAlert($index)" dismiss-on-timeout="2000" class="alert-modal">{{alt.message}}</div>
             </div>
             <div id="div5"></div>
-            <div class="col-md-3">
-                <div class="col-md-offset-6 col-md-6">
-                    <img class="seal" src=""></img>
-                </div>
-            </div>
-            <div class="col-md-7">
+            <div class="col-md-offset-3 col-md-7">
                 <h1 class="margin-top-immense margin-bottom-immense roboto-font">
                 Random Acro Generator
               </h1>
