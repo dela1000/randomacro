@@ -1,6 +1,6 @@
 var app = angular.module('app');
 
-app.factory('rootServices', function($http, $rootScope) {
+app.factory('positionsServices', function($http, $rootScope) {
     var services = {};
 
     services.positionsList = [{
@@ -17,6 +17,12 @@ app.factory('rootServices', function($http, $rootScope) {
         "rating": 1.0
     }, {
         "name": "Straddle Throne",
+        "difficulty": "beginner",
+        "on": "feet",
+        "inverted": false,
+        "rating": 2.0
+    }, {
+        "name": "Reverse Straddle Throne",
         "difficulty": "beginner",
         "on": "feet",
         "inverted": false,
@@ -142,12 +148,6 @@ app.factory('rootServices', function($http, $rootScope) {
         "inverted": true,
         "rating": 4.0
     }, {
-        "name": "Bat",
-        "difficulty": "beginner",
-        "on": "feet",
-        "inverted": true,
-        "rating": 1.0
-    }, {
         "name": "Couch",
         "difficulty": "intermediate",
         "on": "feet",
@@ -177,6 +177,12 @@ app.factory('rootServices', function($http, $rootScope) {
         "on": "hands",
         "inverted": false,
         "rating": 5.0
+    }, {
+        "name": "Bicep Stand",
+        "difficulty": "intermediate",
+        "on": "feet",
+        "inverted": true,
+        "rating": 3.0
     }];
 
 
