@@ -130,6 +130,12 @@ app.factory('positionsServices', function($http, $rootScope) {
         "inverted": false,
         "rating": 1.0
     }, {
+        "name": "Reverse Shin-to-Foot",
+        "difficulty": "intermediate",
+        "on": "feet",
+        "inverted": false,
+        "rating": 2.0
+    }, {
         "name": "Foot-to-Shin",
         "difficulty": "beginner",
         "on": "feet",
@@ -140,6 +146,18 @@ app.factory('positionsServices', function($http, $rootScope) {
         "difficulty": "intermediate",
         "on": "feet",
         "inverted": false,
+        "rating": 2.0
+    }, {
+        "name": "Foot-to-Foot",
+        "difficulty": "advanced",
+        "on": "feet",
+        "inverted": false,
+        "rating": 4.0
+    }, {
+        "name": "Baby Hand-to-Hand",
+        "difficulty": "advanced",
+        "on": "hands",
+        "inverted": true,
         "rating": 3.0
     }, {
         "name": "Hand-to-Hand",
@@ -149,6 +167,18 @@ app.factory('positionsServices', function($http, $rootScope) {
         "rating": 4.0
     }, {
         "name": "Couch",
+        "difficulty": "intermediate",
+        "on": "feet",
+        "inverted": false,
+        "rating": 2.0
+    }, {
+        "name": "Secretary",
+        "difficulty": "beginner",
+        "on": "feet",
+        "inverted": false,
+        "rating": 1.0
+    }, {
+        "name": "Reverse Secretary",
         "difficulty": "intermediate",
         "on": "feet",
         "inverted": false,

@@ -28,6 +28,14 @@
     </form>
   </div>
   <br>
+  <div class="row align-center margin-bottom-large" ng-show="difficultyRating">
+    <p>
+      Rating Score: {{difficultyRating | number : 2}}
+    </p>
+    <p>
+      Possible Positions available: {{possiblePositions}}
+    </p>
+  </div>
   <div class="row margin-bottom-large">
     <div ng-repeat="item in firstRowList track by $index">
       <div ng-class="firstRowPillClass" class="margin-bottom-large">
