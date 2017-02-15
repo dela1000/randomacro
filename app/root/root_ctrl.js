@@ -6,6 +6,7 @@ app.controller('rootController', function($scope, positionsServices, alert) {
     $scope.formData.diff.beginner = true;
     $scope.formData.numberInput = "4";
 
+    $scope.difficultyLevels = ["all", "beginner", "intermediate", "advanced"]
 
     $scope.$watch('formData.numberInput', function() {
         selectPositions();
@@ -24,8 +25,11 @@ app.controller('rootController', function($scope, positionsServices, alert) {
     $scope.$watchGroup(['formData.diff.beginner', 'formData.diff.intermediate', 'formData.diff.advanced'], function() {
         if ($scope.formData.diff.beginner || $scope.formData.diff.intermediate || $scope.formData.diff.advanced) {
             $scope.formData.all = false;
-        } else {
+        }
+
+        if ($scope.formData.diff.beginner && $scope.formData.diff.intermediate && $scope.formData.diff.advanced) {
             $scope.formData.all = true;
+            $scope.formData.diff = {};
         }
 
         selectPositions();

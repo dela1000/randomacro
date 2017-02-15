@@ -53,22 +53,22 @@ app.factory('positionsServices', function($http, $rootScope) {
         "rating": 2.0
     }, {
         "name": "Shoulder Stand",
-        "difficulty": "advanced",
+        "difficulty": "intermediate",
         "on": "hands",
         "inverted": true,
-        "rating": 4.0
+        "rating": 3.0
     }, {
         "name": "Supported Shoulder Stand",
+        "difficulty": "beginner",
+        "on": "hands and feet",
+        "inverted": true,
+        "rating": 1.0
+    }, {
+        "name": "Reverse Shoulder Stand",
         "difficulty": "intermediate",
         "on": "hands and feet",
         "inverted": true,
-        "rating": 2.0
-    }, {
-        "name": "Reverse Shoulder Stand",
-        "difficulty": "advanced",
-        "on": "hands and feet",
-        "inverted": true,
-        "rating": 4.0
+        "rating": 3.0
     }, {
         "name": "Cathedral",
         "difficulty": "beginner",
