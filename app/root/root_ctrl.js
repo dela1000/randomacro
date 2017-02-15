@@ -11,11 +11,10 @@ app.controller('rootController', function($scope, positionsServices, alert) {
             return;
         }
         if ($scope.formData.numberInput > 0 && $scope.formData.numberInput < 2) {
-            alert.addAlert("You want to move, right? Pick more than 1")
             return;
         }
-        if ($scope.formData.numberInput > 12) {
-            alert.addAlert("Take it easy, champ. Pick less than 12")
+        if ($scope.formData.numberInput > 10) {
+            alert.addAlert("Take it easy, champ. Pick less than 10")
             return;
         }
         if ($scope.formData.numberInput && $scope.formData.level) {

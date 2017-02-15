@@ -99,7 +99,6 @@ h1::first-letter {
     font-size: 125%;
 }
 
-
 /*COLORS - Pallette from https://color.adobe.com/KnotJustNautical-color-theme-2565165/ */
 
 .dark-blue {
@@ -140,7 +139,7 @@ h1::first-letter {
     cursor: pointer;
 }
 
-.alert-modal{
+.alert-modal {
     background-color: #FC4349;
 }
 

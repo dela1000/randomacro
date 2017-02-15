@@ -148,7 +148,7 @@ app.factory('positionsServices', function($http, $rootScope) {
         "inverted": false,
         "rating": 2.0
     }, {
-        "name": "Foot-to-Foot",
+        "name": "Reverse Foot-to-Foot",
         "difficulty": "advanced",
         "on": "feet",
         "inverted": false,
