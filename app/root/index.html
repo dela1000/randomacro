@@ -37,69 +37,25 @@
     </p>
   </div>
   <div class="row margin-bottom-large">
-    <div ng-repeat="item in firstRowList track by $index">
-      <div ng-class="firstRowPillClass" class="margin-bottom-large">
-        <div class="positionPill">
-          <div class="name huge-font align-center">
-              {{item.name}}
-          </div>
-          <div class="details">
-            Flyer is on {{item.on}} and
-            <span ng-show="item.inverted">
-              inverted
-            </span>
-            <span ng-show="!item.inverted">
-              not inverted
-            </span>
-          </div>
-          <div class="details capitalize">
-            {{item.difficulty}}
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row margin-bottom-large">
-    <div ng-repeat="item in secondRowList track by $index">
-      <div ng-class="secondRowPillClass" class="margin-bottom-large">
-        <div class="positionPill">
-          <div class="name huge-font align-center">
-              {{item.name}}
-          </div>
-          <div class="details">
-            Flyer is on {{item.on}} and
-            <span ng-show="item.inverted">
-              inverted
-            </span>
-            <span ng-show="!item.inverted">
-              not inverted
-            </span>
-          </div>
-          <div class="details capitalize">
-            {{item.difficulty}}
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row margin-bottom-large">
-    <div ng-repeat="item in thirdRowList track by $index">
-      <div ng-class="thirdRowPillClass" class="margin-bottom-large">
-        <div class="positionPill">
-          <div class="name huge-font align-center">
-              {{item.name}}
-          </div>
-          <div class="details">
-            Flyer is on {{item.on}} and
-            <span ng-show="item.inverted">
-              inverted
-            </span>
-            <span ng-show="!item.inverted">
-              not inverted
-            </span>
-          </div>
-          <div class="details capitalize">
-            {{item.difficulty}}
+    <div ng-repeat="positions in positionHolder track by $index">
+      <div ng-repeat= "position in positions track by $index">
+        <div ng-class="position.class" class="margin-bottom-large">
+          <div class="positionPill">
+            <div class="name huge-font align-center">
+                {{position.name}}
+            </div>
+            <div class="details">
+              Flyer is on {{position.on}} and
+              <span ng-show="position.inverted">
+                inverted
+              </span>
+              <span ng-show="!position.inverted">
+                not inverted
+              </span>
+            </div>
+            <div class="details capitalize">
+              {{position.difficulty}}
+            </div>
           </div>
         </div>
       </div>
