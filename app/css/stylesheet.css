@@ -153,7 +153,7 @@ h1::first-letter {
 /*Position Pill*/
 
 .positionPill {
-    height: 120px;
+    min-height: 135px;
     width: auto;
     border: 1px solid;
     border-radius: 25px;

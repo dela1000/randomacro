@@ -13,25 +13,23 @@
       </div>
       <div class="row">
         <div class="col-md-offset-2 col-md-2">
-          <input type="radio" value="all" ng-model="formData.level"> All
+
+          <input type="checkbox" value="all" ng-model="formData.all"> All
         </div>
         <div class="col-md-2">
-          <input type="radio" value="beginner" ng-model="formData.level" checked> Beginner
+          <input type="checkbox" value="beginner" ng-model="formData.diff.beginner" checked> Beginner
         </div>
         <div class="col-md-2">
-          <input type="radio" value="intermediate" ng-model="formData.level"> Intermediate
+          <input type="checkbox" value="intermediate" ng-model="formData.diff.intermediate"> Intermediate
         </div>
         <div class="col-md-2">
-          <input type="radio" value="advanced" ng-model="formData.level"> Advanced
+          <input type="checkbox" value="advanced" ng-model="formData.diff.advanced"> Advanced
         </div>
       </div>
     </form>
   </div>
   <br>
   <div class="row align-center margin-bottom-large" ng-show="difficultyRating">
-    <p>
-      Rating Score: {{difficultyRating | number : 2}}
-    </p>
     <p>
       Possible Positions available: {{possiblePositions}}
     </p>
@@ -41,25 +39,33 @@
       <div ng-repeat= "position in positions track by $index">
         <div ng-class="position.class" class="margin-bottom-large">
           <div class="positionPill">
-            <div class="name huge-font align-center">
-                {{position.name}}
+            <div class="position-details">
+              <div class="name huge-font align-center">
+                  {{position.name}}
+              </div>
+              <div class="details">
+                Flyer is on {{position.on}} and
+                <span ng-show="position.inverted">
+                  inverted
+                </span>
+                <span ng-show="!position.inverted">
+                  not inverted
+                </span>
+              </div>
+              <div class="details capitalize">
+                <i>{{position.difficulty}}</i>
+              </div>
             </div>
-            <div class="details">
-              Flyer is on {{position.on}} and
-              <span ng-show="position.inverted">
-                inverted
-              </span>
-              <span ng-show="!position.inverted">
-                not inverted
-              </span>
-            </div>
-            <div class="details capitalize">
-              {{position.difficulty}}
-            </div>
+            <div class="position-image"></div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+  <div class="row align-center margin-bottom-large" ng-show="difficultyRating">
+    <p>
+      Rating Score: {{difficultyRating | number : 2}}
+    </p>
   </div>
 </div>
 <div style="height:75px"></div>
