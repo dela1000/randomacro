@@ -37,7 +37,7 @@ app.factory('positionsServices', function($http, $rootScope) {
         "on": "feet",
         "inverted": false,
         "rating": 1.0,
-        "image": ""
+        "image": "/app/assets/images/vishnuscouch.jpg"
     }, {
         "name": "High-Flying Whale",
         "difficulty": "beginner",
@@ -240,14 +240,14 @@ app.factory('positionsServices', function($http, $rootScope) {
         "on": "hands",
         "inverted": false,
         "rating": 5.0,
-        "image": ""
+        "image": "/app/assets/images/croc.jpg"
     }, {
         "name": "Bicep Stand",
         "difficulty": "intermediate",
         "on": "feet",
         "inverted": true,
         "rating": 3.0,
-        "image": ""
+        "image": "/app/assets/images/bicepstand.jpg"
     }];
 
 

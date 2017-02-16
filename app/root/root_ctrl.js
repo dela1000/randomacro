@@ -26,7 +26,6 @@ app.controller('rootController', function($scope, positionsServices, alert) {
         }
 
         if ($scope.formData.diff.beginner && $scope.formData.diff.intermediate && $scope.formData.diff.advanced) {
-            $scope.formData.all = true;
             $scope.formData.diff = {};
         }
 
@@ -91,7 +90,7 @@ app.controller('rootController', function($scope, positionsServices, alert) {
                 assignPillClass(list, list.length);
             })
             //find the mean of all the selected the ratings
-            $scope.difficultyRating = _.mean($scope.ratings)
+            $scope.difficultyRating = _.mean($scope.ratings);
         }
     }
     // HELPER FUNCTIONS

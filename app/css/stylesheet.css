@@ -154,16 +154,17 @@ h1::first-letter {
 
 .positionPill {
     width: auto;
-    border: 1px solid;
+    border: 1px solid #dadada;
     border-radius: 25px;
     background-color: #FFFFFF;
 }
 
 .position-details {
-    height: 100px;
+    height: 65px;
 }
 
 .positionPill .name {
+    height: 45px;
     font-weight: bold;
     margin-top: 15px;
     margin-left: 20px;
