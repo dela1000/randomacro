@@ -153,11 +153,14 @@ h1::first-letter {
 /*Position Pill*/
 
 .positionPill {
-    min-height: 135px;
     width: auto;
     border: 1px solid;
     border-radius: 25px;
     background-color: #FFFFFF;
+}
+
+.position-details {
+    height: 100px;
 }
 
 .positionPill .name {
@@ -172,6 +175,16 @@ h1::first-letter {
     margin-right: 20px;
 }
 
+/*Position image*/
+
+.position-image img {
+    width: 100%;
+    position: relative;
+    border-radius: 0px 0px 23px 23px;
+    margin: auto;
+    left: 0;
+    right: 0;
+}
 
 /*PADDING*/
 

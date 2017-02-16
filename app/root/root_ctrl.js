@@ -6,8 +6,6 @@ app.controller('rootController', function($scope, positionsServices, alert) {
     $scope.formData.diff.beginner = true;
     $scope.formData.numberInput = "4";
 
-    $scope.difficultyLevels = ["all", "beginner", "intermediate", "advanced"]
-
     $scope.$watch('formData.numberInput', function() {
         selectPositions();
     })
@@ -113,7 +111,7 @@ app.controller('rootController', function($scope, positionsServices, alert) {
     var assignPillClass = function(collection, length) {
         if (length === 1) {
             _.forEach(collection, function(item) {
-                item.class = "col-md-12"
+                item.class = "col-md-offset-3 col-md-6"
             })
         }
         if (length === 2) {
