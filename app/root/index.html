@@ -8,51 +8,67 @@
             <span class="input__label-content input__label-content--manami">
               Select a number of positions (from 2 to 10)
             </span>
-          </label>
+        </label>
         </span>
       </div>
       <div class="row">
-        <div class="col-md-offset-2 col-md-2">
-          <input type="checkbox" value="all" ng-model="formData.all"> All
+        <div class="col-sm-offset-2 col-sm-2">
+          <div class="roundedButton">
+            <input type="checkbox" value="all" ng-model="formData.all" id="slideAll">
+            <label for="slideAll"></label>
+          </div>
+          <p class="align-center bold">All</p>
         </div>
-        <div class="col-md-2">
-          <input type="checkbox" value="beginner" ng-model="formData.diff.beginner" checked> Beginner
+        <div class="col-sm-2">
+          <div class="roundedButton">
+            <input type="checkbox" value="beginner" ng-model="formData.diff.beginner" id="slideBeginner">
+            <label for="slideBeginner"></label>
+          </div>
+          <p class="align-center bold">Beginner</p>
         </div>
-        <div class="col-md-2">
-          <input type="checkbox" value="intermediate" ng-model="formData.diff.intermediate"> Intermediate
+        <div class="col-sm-2">
+          <div class="roundedButton">
+            <input type="checkbox" value="intermediate" ng-model="formData.diff.intermediate" id="slideIntermediate">
+            <label for="slideIntermediate"></label>
+          </div>
+          <p class="align-center bold">Intermediate</p>
         </div>
-        <div class="col-md-2">
-          <input type="checkbox" value="advanced" ng-model="formData.diff.advanced"> Advanced
+        <div class="col-sm-2">
+          <div class="roundedButton">
+            <input type="checkbox" value="advanced" ng-model="formData.diff.advanced" id="slideAdvanced">
+            <label for="slideAdvanced"></label>
+          </div>
+          <p class="align-center bold">Advanced</p>
         </div>
       </div>
     </form>
   </div>
   <br>
-  <div class="row align-center margin-bottom-large" ng-show="difficultyRating">
-    <p>
-      Possible Positions available: {{possiblePositions}}
-    </p>
-  </div>
   <div class="row margin-bottom-large">
     <div ng-repeat="positions in positionHolder track by $index">
-      <div ng-repeat= "position in positions track by $index">
+      <div ng-repeat="position in positions track by $index">
         <div ng-class="position.class" class="margin-bottom-large">
           <div class="positionPill">
             <div class="position-details">
               <div class="name huge-font align-center">
-                  {{position.name}}
+                {{position.name}}
               </div>
               <div class="details capitalize small-font align-center">
                 <i>{{position.difficulty}}</i>
               </div>
             </div>
-            <div class="position-image">
+            <div class="position-image" ng-if="position.image">
               <img ng-src="{{position.image}}"></img>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+  <div class="row align-center margin-bottom-large" ng-show="difficultyRating">
+    <p>
+      Possible Positions available: {{possiblePositions}}
+    </p>
   </div>
   <div class="row align-center margin-bottom-large" ng-show="difficultyRating">
     <p>
