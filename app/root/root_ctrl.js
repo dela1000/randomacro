@@ -127,12 +127,12 @@ app.controller('rootController', function($scope, positionsServices, alert) {
     var assignPillClass = function(collection, length) {
         if (length === 1) {
             _.forEach(collection, function(item) {
-                item.class = "col-md-offset-3 col-md-6"
+                item.class = "col-md-offset-4 col-md-4"
             })
         }
         if (length === 2) {
             _.forEach(collection, function(item) {
-                item.class = "col-md-6";
+                item.class = "col-md-offset-2 col-md-3";
             })
         }
         if (length === 3) {

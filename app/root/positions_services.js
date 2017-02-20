@@ -102,12 +102,12 @@ app.factory('positionsServices', function($http, $rootScope) {
         "rating": 1.0,
         "image": ""
     }, {
-        "name": "Floating Paschi",
+        "name": "Floating Pashi",
         "difficulty": "intermediate",
         "on": "hands",
         "inverted": true,
         "rating": 3.0,
-        "image": "/app/assets/images/floatingpaschi.jpg"
+        "image": "/app/assets/images/floatingpashi.jpg"
     }, {
         "name": "Folded Leaf",
         "difficulty": "beginner",
@@ -128,7 +128,7 @@ app.factory('positionsServices', function($http, $rootScope) {
         "on": "hands",
         "inverted": false,
         "rating": 3.0,
-        "image": ""
+        "image": "/app/assets/images/extendedfoottohand.jpg"
     }, {
         "name": "Reverse Foot-to-Hand",
         "difficulty": "intermediate",
