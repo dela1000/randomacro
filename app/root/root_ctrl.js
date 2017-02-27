@@ -2,16 +2,37 @@ var app = angular.module('app');
 
 app.controller('rootController', function($scope, positionsServices, alert) {
     $scope.formData = {};
-    $scope.formData.diff = {};
-    $scope.formData.diff.beginner = true;
+    $scope.formData.diff = {
+        beginner: true,
+        intermediate: false,
+        advanced: false
+    };
     $scope.formData.numberInput = "4";
+
+
+    $scope.levelAll = function() {
+        $scope.formData.all = true;
+        $scope.formData.diff.beginner = false;
+        $scope.formData.diff.intermediate = false;
+        $scope.formData.diff.advanced = false;
+    }
+
+
+    $scope.levelSelect = function(level) {
+        $scope.formData.all = false;
+        
+        if ($scope.formData.diff[level] === false) {
+            $scope.formData.diff[level] = true;
+        } else {
+            $scope.formData.diff[level] = false;
+        }
+    }
 
     $scope.$watch('formData.numberInput', function() {
         selectPositions();
     })
 
     $scope.$watch('formData.all', function() {
-        console.log("+++ 14 root_ctrl.js Here")
         if ($scope.formData.all) {
             $scope.formData.diff.beginner = false;
             $scope.formData.diff.intermediate = false;
@@ -68,7 +89,6 @@ app.controller('rootController', function($scope, positionsServices, alert) {
             $scope.filteredList = [];
             //clear current data
             initVars();
-            console.log("+++ 67 root_ctrl.js $scope.positionHolder.firstRowList.length: ", $scope.positionHolder.firstRowList.length)
             //if all is selected, use all the positions on the list
             if ($scope.formData.all) {
                 $scope.filteredList = positionsServices.positionsList;

@@ -1,49 +1,31 @@
-<div class="main-section">
-  <div>
-    <form>
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container-fluid light-blue white-text">
+    <div class="col-md-offset-4 col-md-4">
+      <h3 class=" align-center playfair-font">
+        AcroGen
+      </h3>
       <div class="align-center">
         <span class="input input--manami">
-          <input class="input__field input__field--manami" type="text" id="input-1" ng-model="formData.numberInput" name="" min="1" max="10" maxlength="2"  autocomplete="off" debounce="1000">
-          <label class="input__label input__label--manami" for="input-1">
-            <span class="input__label-content input__label-content--manami">
-              Select a number of positions (from 2 to 10)
-            </span>
+        <input class="input_field input_field--manami" type="text" id="input-1" ng-model="formData.numberInput" name="" min="1" max="10" maxlength="2"  autocomplete="off" debounce="1000">
+        <label class="input_label input_label--manami" for="input-1">
+          <span class="input_label-content input_label-content--manami">
+            Select a number (from 2 to 10)
+          </span>
         </label>
         </span>
       </div>
-      <div class="row">
-        <div class="col-sm-offset-2 col-sm-2">
-          <div class="roundedButton">
-            <input type="checkbox" value="all" ng-model="formData.all" id="slideAll">
-            <label for="slideAll"></label>
-          </div>
-          <p class="align-center bold">All</p>
-        </div>
-        <div class="col-sm-2">
-          <div class="roundedButton">
-            <input type="checkbox" value="beginner" ng-model="formData.diff.beginner" id="slideBeginner">
-            <label for="slideBeginner"></label>
-          </div>
-          <p class="align-center bold">Beginner</p>
-        </div>
-        <div class="col-sm-2">
-          <div class="roundedButton">
-            <input type="checkbox" value="intermediate" ng-model="formData.diff.intermediate" id="slideIntermediate">
-            <label for="slideIntermediate"></label>
-          </div>
-          <p class="align-center bold">Intermediate</p>
-        </div>
-        <div class="col-sm-2">
-          <div class="roundedButton">
-            <input type="checkbox" value="advanced" ng-model="formData.diff.advanced" id="slideAdvanced">
-            <label for="slideAdvanced"></label>
-          </div>
-          <p class="align-center bold">Advanced</p>
+      <div class="row margin-bottom-large align-center">
+        <div class="btn-group" role="group">
+          <button type="button" ng-class="formData.all ? 'btn btn-success' : 'btn btn-primary'" ng-click="levelAll()">All</button>
+          <button type="button" ng-class="formData.diff.beginner ? 'btn btn-success' : 'btn btn-primary'" ng-click="levelSelect('beginner')">Beginner</button>
+          <button type="button" ng-class="formData.diff.intermediate ? 'btn btn-success' : 'btn btn-primary'" ng-click="levelSelect('intermediate')">Intermediate</button>
+          <button type="button" ng-class="formData.diff.advanced ? 'btn btn-success' : 'btn btn-primary'" ng-click="levelSelect('advanced')">Advanced</button>
         </div>
       </div>
-    </form>
+    </div>
   </div>
-  <br>
+</nav>
+<div class="main-section">
   <div class="row margin-bottom-large">
     <div ng-repeat="positions in positionHolder track by $index">
       <div ng-repeat="position in positions track by $index">
@@ -76,4 +58,3 @@
     </p>
   </div>
 </div>
-<div style="height:75px"></div>

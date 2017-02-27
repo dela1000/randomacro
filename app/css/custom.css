@@ -9,7 +9,7 @@
     vertical-align: top;
 }
 
-.input__field {
+.input_field {
     position: relative;
     display: block;
     float: right;
@@ -17,24 +17,22 @@
     width: 60%;
     border: none;
     border-radius: 0;
-    background: #f0f0f0;
-    color: #aaa;
     font-weight: 400;
     font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
     -webkit-appearance: none;
     /* for box shadows to show on iOS */
 }
 
-.input__field:focus {
+.input_field:focus {
     outline: none;
 }
 
-.input__label {
+.input_label {
     display: inline-block;
     float: right;
     padding: 0 1em;
     width: 40%;
-    color: #696969;
+    color: #ffffff;
     font-weight: bold;
     font-size: 70.25%;
     -webkit-font-smoothing: antialiased;
@@ -47,24 +45,13 @@
     user-select: none;
 }
 
-.input__label-content {
+.input_label-content {
     position: relative;
     display: block;
     padding: 1.6em 0;
     width: 100%;
 }
 
-.graphic {
-    position: absolute;
-    top: 0;
-    left: 0;
-    fill: none;
-}
-
-.icon {
-    color: #ddd;
-    font-size: 150%;
-}
 
 
 /* Individual styles */
@@ -76,7 +63,7 @@
     overflow: hidden;
 }
 
-.input__field--manami {
+.input_field--manami {
     width: 100%;
     background: transparent;
     padding: 0.5em;
@@ -86,7 +73,7 @@
     opacity: 0;
 }
 
-.input__label--manami {
+.input_label--manami {
     width: 100%;
     position: absolute;
     text-align: left;
@@ -95,15 +82,15 @@
     font-size: 1em;
 }
 
-.input__label--manami::before,
-.input__label--manami::after {
+.input_label--manami::before,
+.input_label--manami::after {
     content: '';
     position: absolute;
     width: 100%;
     left: 0;
 }
 
-.input__label--manami::before {
+.input_label--manami::before {
     height: 100%;
     background: #A8A8A8;
     top: 0;
@@ -113,7 +100,7 @@
     transition: transform 0.2s;
 }
 
-.input__label--manami::after {
+.input_label--manami::after {
     height: 2px;
     background: #A8A8A8;
     top: 100%;
@@ -121,7 +108,7 @@
     transition: opacity 0.2s;
 }
 
-.input__label-content--manami {
+.input_label-content--manami {
     padding: 0;
     -webkit-transform-origin: 0 0;
     transform-origin: 0 0;
@@ -129,35 +116,35 @@
     transition: transform 0.2s, color 0.2s;
 }
 
-.input__field--manami:focus,
-.input--filled .input__field--manami {
+.input_field--manami:focus,
+.input--filled .input_field--manami {
     opacity: 1;
     -webkit-transition: opacity 0s 0.2s;
     transition: opacity 0s 0.2s;
 }
 
-.input__label--manami::before,
-.input__label--manami::after,
-.input__label-content--manami,
-.input__field--manami:focus,
-.input--filled .input__field--manami {
+.input_label--manami::before,
+.input_label--manami::after,
+.input_label-content--manami,
+.input_field--manami:focus,
+.input--filled .input_field--manami {
     -webkit-transition-timing-function: cubic-bezier(0, 0.25, 0.5, 1);
     transition-timing-function: cubic-bezier(0, 0.25, 0.5, 1);
 }
 
-.input__field--manami:focus + .input__label--manami::before,
-.input--filled .input__label--manami::before {
+.input_field--manami:focus + .input_label--manami::before,
+.input--filled .input_label--manami::before {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
 }
 
-.input__field--manami:focus + .input__label--manami::after,
-.input--filled .input__label--manami::after {
+.input_field--manami:focus + .input_label--manami::after,
+.input--filled .input_label--manami::after {
     opacity: 0;
 }
 
-.input__field--manami:focus + .input__label--manami .input__label-content--manami,
-.input--filled .input__label--manami .input__label-content--manami {
+.input_field--manami:focus + .input_label--manami .input_label-content--manami,
+.input--filled .input_label--manami .input_label-content--manami {
     color: #cbc4c6;
     -webkit-transform: translate3d(0, 2.1em, 0) scale3d(0.65, 0.65, 1);
     transform: translate3d(0, 2.1em, 0) scale3d(0.65, 0.65, 1);

@@ -136,14 +136,16 @@ app.factory('positionsServices', function($http, $rootScope) {
         "inverted": false,
         "rating": 4.0,
         "image": "/app/assets/images/reversefoottohand.jpg"
-    }, {
-        "name": "Reverse Extended Foot-to-Hand",
-        "difficulty": "advanced",
-        "on": "hands",
-        "inverted": false,
-        "rating": 3.0,
-        "image": ""
-    }, {
+    }, 
+    // {
+    //     "name": "Reverse Extended Foot-to-Hand",
+    //     "difficulty": "advanced",
+    //     "on": "hands",
+    //     "inverted": false,
+    //     "rating": 3.0,
+    //     "image": ""
+    // }, 
+    {
         "name": "Shin-to-Foot",
         "difficulty": "beginner",
         "on": "feet",
@@ -171,14 +173,16 @@ app.factory('positionsServices', function($http, $rootScope) {
         "inverted": false,
         "rating": 2.0,
         "image": "/app/assets/images/foottofoot.jpg"
-    }, {
-        "name": "Reverse Foot-to-Foot",
-        "difficulty": "advanced",
-        "on": "feet",
-        "inverted": false,
-        "rating": 4.0,
-        "image": ""
-    }, {
+    }, 
+    // {
+    //     "name": "Reverse Foot-to-Foot",
+    //     "difficulty": "advanced",
+    //     "on": "feet",
+    //     "inverted": false,
+    //     "rating": 4.0,
+    //     "image": ""
+    // }, 
+    {
         "name": "Hand-to-Hand",
         "difficulty": "advanced",
         "on": "hands",
