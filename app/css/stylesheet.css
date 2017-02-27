@@ -128,6 +128,7 @@ h1::first-letter {
 
 .main-section-show {
     padding-top: 210px;
+    padding-bottom: 50px;
 }
 
 .main-section-hide {
@@ -142,7 +143,7 @@ h1::first-letter {
 
 .small-logo-container {
     padding-top: 10px;
-    height: 50px; 
+    height: 50px;
     width: 500px;
 }
 
@@ -156,7 +157,7 @@ h1::first-letter {
     bottom: 0;
     height: 50px;
     width: 100%;
-    overflow:hidden;
+    overflow: hidden;
 }
 
 .pointer {
