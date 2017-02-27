@@ -12,7 +12,6 @@ app.controller('rootController', function($scope, $window, positionsServices, al
 
     $scope.showNav = true;
     $scope.hideNavigation = function() {
-        console.log("+++ 13 root_ctrl.js Here")
         $scope.showNav = !$scope.showNav;
     }
 

@@ -142,6 +142,8 @@ h1::first-letter {
 
 .small-logo-container {
     padding-top: 10px;
+    height: 50px; 
+    width: 500px;
 }
 
 .small-logo {
