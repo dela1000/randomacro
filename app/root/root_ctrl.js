@@ -10,6 +10,12 @@ app.controller('rootController', function($scope, $window, positionsServices, al
     $scope.formData.numberInput = "4";
 
 
+    $scope.showNav = true;
+    $scope.hideNavigation = function() {
+        console.log("+++ 13 root_ctrl.js Here")
+        $scope.showNav = !$scope.showNav;
+    }
+
     $scope.levelAll = function() {
         $window.scrollTo(0, 0);
         $scope.formData.all = true;

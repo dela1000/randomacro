@@ -121,8 +121,26 @@ h1::first-letter {
 
 /*MAIN SECTION*/
 
-.main-section {
-    padding-top: 220px;
+.main-section-show {
+    padding-top: 190px;
+}
+
+.main-section-hide {
+    padding-top: 80px;
+}
+
+.less-nav {
+    position: fixed;
+    right: 10px;
+    top: 16px;
+}
+
+.small-logo-container {
+    padding-top: 10px;
+}
+
+.small-logo {
+    font-size: 22px;
 }
 
 .footer {
