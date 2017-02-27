@@ -1,6 +1,6 @@
 var app = angular.module('app');
 
-app.controller('rootController', function($scope, positionsServices, alert) {
+app.controller('rootController', function($scope, $window, positionsServices, alert) {
     $scope.formData = {};
     $scope.formData.diff = {
         beginner: true,
@@ -11,6 +11,7 @@ app.controller('rootController', function($scope, positionsServices, alert) {
 
 
     $scope.levelAll = function() {
+        $window.scrollTo(0, 0);
         $scope.formData.all = true;
         $scope.formData.diff.beginner = false;
         $scope.formData.diff.intermediate = false;
@@ -19,6 +20,7 @@ app.controller('rootController', function($scope, positionsServices, alert) {
 
 
     $scope.levelSelect = function(level) {
+        $window.scrollTo(0, 0);
         $scope.formData.all = false;
         
         if ($scope.formData.diff[level] === false) {
