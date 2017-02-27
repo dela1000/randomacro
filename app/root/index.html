@@ -22,13 +22,17 @@
         </label>
         </span>
       </div>
-      <div class="row margin-bottom-medium align-center">
+      <div class="margin-bottom-medium align-center">
         <div class="btn-group" role="group">
           <button type="button" ng-class="formData.all ? 'btn btn-success btn-sm' : 'btn btn-primary btn-sm'" ng-click="levelAll()">All</button>
           <button type="button" ng-class="formData.diff.beginner ? 'btn btn-success btn-sm' : 'btn btn-primary btn-sm'" ng-click="levelSelect('beginner')">Beginner</button>
           <button type="button" ng-class="formData.diff.intermediate ? 'btn btn-success btn-sm' : 'btn btn-primary btn-sm'" ng-click="levelSelect('intermediate')">Intermediate</button>
           <button type="button" ng-class="formData.diff.advanced ? 'btn btn-success btn-sm' : 'btn btn-primary btn-sm'" ng-click="levelSelect('advanced')">Advanced</button>
         </div>
+      </div>
+      <div class="align-center margin-bottom-medium">
+        <button class="btn btn-primary btn-sm" ng-click="refresh()">Refresh</button>
+        <button ng-class="saved ? 'btn btn-success btn-sm' : 'btn btn-primary btn-sm'" ng-click="saveList()">Save</button>
       </div>
     </div>
     <div ng-show="!showNav" style="height: 50px; width: 500px;">

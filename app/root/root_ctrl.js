@@ -27,7 +27,7 @@ app.controller('rootController', function($scope, $window, positionsServices, al
     $scope.levelSelect = function(level) {
         $window.scrollTo(0, 0);
         $scope.formData.all = false;
-        
+
         if ($scope.formData.diff[level] === false) {
             $scope.formData.diff[level] = true;
         } else {
@@ -65,8 +65,19 @@ app.controller('rootController', function($scope, $window, positionsServices, al
         runSelectPositions();
     }, true)
 
+    $scope.saveList = function() {
+        $scope.saved = !$scope.saved;
+    }
+
+    $scope.refresh = function() {
+        runSelectPositions();
+    }
 
     function runSelectPositions() {
+        if ($scope.saved) {
+            return;
+        }
+
         if ($scope.formData.diff.beginner || $scope.formData.diff.intermediate || $scope.formData.diff.advanced || $scope.formData.all) {
             selectPositions();
         } else {
@@ -76,6 +87,9 @@ app.controller('rootController', function($scope, $window, positionsServices, al
     };
 
     var selectPositions = function() {
+        if ($scope.saved) {
+            return;
+        }
         //If there is no numberInput data, clear variables and return
         if ($scope.formData.numberInput === 0 || $scope.formData.numberInput === "" || $scope.formData.numberInput === undefined || $scope.formData.numberInput === null) {
             initVars();
