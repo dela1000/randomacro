@@ -9,14 +9,14 @@ app.factory('positionsServices', function($http, $rootScope) {
         "on": "hands and feet",
         "inverted": false,
         "rating": 1.0,
-        "image": ""
+        "image": "/app/assets/images/bird.jpg"
     }, {
         "name": "Throne",
         "difficulty": "beginner",
         "on": "hands and feet",
         "inverted": false,
         "rating": 1.0,
-        "image": ""
+        "image": "/app/assets/images/throne.jpg"
     }, {
         "name": "Straddle Throne",
         "difficulty": "beginner",
@@ -30,7 +30,7 @@ app.factory('positionsServices', function($http, $rootScope) {
         "on": "feet",
         "inverted": false,
         "rating": 2.0,
-        "image": ""
+        "image": "/app/assets/images/reversestraddlethrone.jpg"
     }, {
         "name": "Vishnu\'s Couch",
         "difficulty": "beginner",
@@ -44,35 +44,35 @@ app.factory('positionsServices', function($http, $rootScope) {
         "on": "hands and feet",
         "inverted": false,
         "rating": 1.0,
-        "image": ""
+        "image": "/app/assets/images/highflyingwhale.jpg"
     }, {
         "name": "Side Star",
         "difficulty": "intermediate",
         "on": "hands and feet",
         "inverted": false,
         "rating": 2.0,
-        "image": ""
+        "image": "/app/assets/images/sidestar.jpg"
     }, {
         "name": "Star",
         "difficulty": "intermediate",
         "on": "hands and feet",
         "inverted": true,
         "rating": 2.0,
-        "image": ""
+        "image": "/app/assets/images/star.jpg"
     }, {
         "name": "Shoulder Stand",
         "difficulty": "intermediate",
         "on": "hands",
         "inverted": true,
         "rating": 3.0,
-        "image": ""
+        "image": "/app/assets/images/shoulderstand.jpg"
     }, {
         "name": "Supported Shoulder Stand",
         "difficulty": "beginner",
         "on": "hands and feet",
         "inverted": true,
         "rating": 1.0,
-        "image": ""
+        "image": "/app/assets/images/supportedshoulderstand.jpg"
     }, {
         "name": "Reverse Shoulder Stand",
         "difficulty": "intermediate",
@@ -81,26 +81,26 @@ app.factory('positionsServices', function($http, $rootScope) {
         "rating": 3.0,
         "image": "/app/assets/images/reverseshoulderstand.jpg"
     }, {
-        "name": "Cathedral",
+        "name": "Candlestick",
         "difficulty": "beginner",
         "on": "hands and feet",
         "inverted": true,
         "rating": 1.0,
-        "image": ""
+        "image": "/app/assets/images/candlestick.jpg"
     }, {
         "name": "Back Bird",
         "difficulty": "beginner",
         "on": "feet",
         "inverted": false,
         "rating": 1.0,
-        "image": ""
+        "image": "/app/assets/images/backbird.jpg"
     }, {
-        "name": "Straddle Bat",
+        "name": "Bat",
         "difficulty": "beginner",
         "on": "feet",
         "inverted": true,
         "rating": 1.0,
-        "image": ""
+        "image": "/app/assets/images/bat.jpg"
     }, {
         "name": "Floating Pashi",
         "difficulty": "intermediate",
@@ -114,14 +114,14 @@ app.factory('positionsServices', function($http, $rootScope) {
         "on": "feet",
         "inverted": true,
         "rating": 1.0,
-        "image": ""
+        "image": "/app/assets/images/foldedleaf.jpg"
     }, {
         "name": "Foot-to-Hand",
         "difficulty": "intermediate",
         "on": "hands",
         "inverted": false,
         "rating": 4.0,
-        "image": ""
+        "image": "/app/assets/images/foottohand.jpg"
     }, {
         "name": "Extended Foot-to-Hand",
         "difficulty": "advanced",
@@ -135,7 +135,7 @@ app.factory('positionsServices', function($http, $rootScope) {
         "on": "hands",
         "inverted": false,
         "rating": 4.0,
-        "image": ""
+        "image": "/app/assets/images/reversefoottohand.jpg"
     }, {
         "name": "Reverse Extended Foot-to-Hand",
         "difficulty": "advanced",
@@ -149,21 +149,21 @@ app.factory('positionsServices', function($http, $rootScope) {
         "on": "feet",
         "inverted": false,
         "rating": 1.0,
-        "image": ""
+        "image": "/app/assets/images/shintofoot.jpg"
     }, {
         "name": "Reverse Shin-to-Foot",
         "difficulty": "intermediate",
         "on": "feet",
         "inverted": false,
         "rating": 2.0,
-        "image": ""
+        "image": "/app/assets/images/reverseshintofoot.jpg"
     }, {
         "name": "Foot-to-Shin",
         "difficulty": "beginner",
         "on": "feet",
         "inverted": false,
         "rating": 1.0,
-        "image": ""
+        "image": "/app/assets/images/foottoshin.jpg"
     }, {
         "name": "Foot-to-Foot",
         "difficulty": "intermediate",
@@ -179,26 +179,19 @@ app.factory('positionsServices', function($http, $rootScope) {
         "rating": 4.0,
         "image": ""
     }, {
-        "name": "Baby Hand-to-Hand",
-        "difficulty": "advanced",
-        "on": "hands",
-        "inverted": true,
-        "rating": 3.0,
-        "image": ""
-    }, {
         "name": "Hand-to-Hand",
         "difficulty": "advanced",
         "on": "hands",
         "inverted": true,
         "rating": 4.0,
-        "image": ""
+        "image": "/app/assets/images/handtohand.jpg"
     }, {
         "name": "Couch",
         "difficulty": "intermediate",
         "on": "feet",
         "inverted": false,
         "rating": 2.0,
-        "image": ""
+        "image": "/app/assets/images/couch.jpg"
     }, {
         "name": "Secretary",
         "difficulty": "beginner",
@@ -212,7 +205,7 @@ app.factory('positionsServices', function($http, $rootScope) {
         "on": "feet",
         "inverted": false,
         "rating": 2.0,
-        "image": ""
+        "image": "/app/assets/images/reversesecretary.jpg"
     }, {
         "name": "Reverse Star",
         "difficulty": "intermediate",
@@ -226,7 +219,7 @@ app.factory('positionsServices', function($http, $rootScope) {
         "on": "hands",
         "inverted": false,
         "rating": 4.0,
-        "image": ""
+        "image": "/app/assets/images/tittibhasana.jpg"
     }, {
         "name": "Floating Camel",
         "difficulty": "advanced",
@@ -249,7 +242,6 @@ app.factory('positionsServices', function($http, $rootScope) {
         "rating": 3.0,
         "image": "/app/assets/images/bicepstand.jpg"
     }];
-
 
     return services;
 })
