@@ -7,7 +7,7 @@ app.controller('contactController', function($scope, alert) {
       console.log("+++ 7 contact_ctrl.js $scope.form: ", $scope.form)
     }
 
-    
+
     $scope.sendMail = function() {
         
     }
