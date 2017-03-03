@@ -108,15 +108,19 @@ h1::first-letter {
 }
 
 .red {
-    background-color: #FC4349;
+    background-color: #E74C3C;
 }
 
 .light-gray {
-    background-color: #D7DADB;
+    background-color: #ECF0F1;
 }
 
 .light-blue {
-    background-color: #6DBCDB;
+    background-color: #3498DB;
+}
+
+.mid-blue {
+    background-color: #2980B9;
 }
 
 .white {

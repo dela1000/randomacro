@@ -33,7 +33,7 @@
   <script src="app/shared_services/alert.js"></script>
 </head>
 
-<body ng-controller="appCtrl">
+<body ng-controller="appCtrl" class="light-gray">
   <!-- Alert modal -->
   <div class="col-md-12 alert-modal-position align-center">
     <div uib-alert ng-repeat="alt in alert.alerts" ng-class="'alert-' + (alt.type)" close="alert.closeAlert($index)" dismiss-on-timeout="2000" class="alert-modal">{{alt.message}}</div>
