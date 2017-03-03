@@ -130,6 +130,10 @@ h1::first-letter {
 
 /*MAIN SECTION*/
 
+.dropshadow {
+    box-shadow: 1px 1px 1px #848484;
+}
+
 .main-section-show {
     padding-top: 210px;
     padding-bottom: 50px;
