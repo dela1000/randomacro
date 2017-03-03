@@ -1,0 +1,49 @@
+<div class="container-fluid contact-form margin-top-immense">
+  <div class="playfair-font margin-bottom-immense">
+    CONTACT FORM
+  </div>
+  <button ng-click="test()">Test</button>
+  <div flex layout="row" layout-align="center center">
+    <form name="contactForm" data-ng-submit="sendMail()">
+      <div class="row margin-bottom-large">
+        <div class="col-md-6">
+          Name:
+        </div>
+        <div class="col-md-6">
+          <input type="text" ng-model="form.contactName">
+        </div>
+      </div>
+      <div class="row margin-bottom-large">
+        <div class="col-md-6">
+          Email:
+        </div>
+        <div class="col-md-6">
+          <input type="email" ng-model="form.contactEmail">
+        </div>
+      </div>
+      <div class="row margin-bottom-large">
+        <div class="col-md-6">
+          Message:
+        </div>
+        <div class="col-md-6">
+          <textarea ng-model="form.contactMessage" columns="1" required></textarea>
+        </div>
+      </div>
+      <div class="row margin-bottom-large">
+        <div class="col-md-6">
+          File:
+        </div>
+        <div class="col-md-6">
+          <input type="file" ngf-select ng-model="form.file" name="file" accept="image/*" ngf-max-size="2MB">
+        </div>
+      </div>
+      <button class="btn btn-alert" type="submit">Send</button>
+    </form>
+  </div>
+  <div class="align-right">
+    <button class="btn btn-alert" ui-sref="/" style="text-decoration:none">
+      Go Back
+    </button>
+  </div>
+</div>
+</div>

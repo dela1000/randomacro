@@ -163,7 +163,7 @@ h1::first-letter {
     position: absolute;
     left: 0;
     bottom: 0;
-    height: 50px;
+    height: 40px;
     width: 100%;
     overflow: hidden;
 }
@@ -219,6 +219,12 @@ h1::first-letter {
     margin: auto;
     left: 0;
     right: 0;
+}
+
+/*CONTACT FORM*/
+
+.contact-form {
+    max-width: 500px;
 }
 
 

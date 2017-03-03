@@ -3,22 +3,34 @@
 
 <head>
   <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-MKK6BTK');</script>
+  <script>
+  (function(w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({
+      'gtm.start': new Date().getTime(),
+      event: 'gtm.js'
+    });
+    var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s),
+      dl = l != 'dataLayer' ? '&l=' + l : '';
+    j.async = true;
+    j.src =
+      'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+    f.parentNode.insertBefore(j, f);
+  })(window, document, 'script', 'dataLayer', 'GTM-MKK6BTK');
+  </script>
   <!-- End Google Tag Manager -->
   <title>Acro Generator</title>
   <!-- Prevent zoom on mobile -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-
-  <meta property="og:title" content="Acro Generator"/>
-  <meta property="og:image" content="http://www.acrogenerator.com/app/assets/images/float.jpg"/>
-  <meta property="og:site_name" content="Acro Generator"/>
-  <meta property="og:description" content="Select a number of positions and the desired difficulty levels and try to connect them."/>
-  <meta property="og:url" content="http://www.acrogenerator.com/"/>
-  
+  <meta property="og:title" content="Acro Generator" />
+  <meta property="og:image" content="http://www.acrogenerator.com/app/assets/images/float.jpg" />
+  <meta property="og:image" content="http://www.acrogenerator.com/app/assets/images/reverseshoulderstand.jpg" />
+  <meta property="og:image" content="http://www.acrogenerator.com/app/assets/images/reversestar.jpg" />
+  <meta property="og:image" content="http://www.acrogenerator.com/app/assets/images/foottofoot.jpg" />
+  <meta property="og:site_name" content="Acro Generator" />
+  <meta property="og:description" content="Select a number of positions and the desired difficulty levels and try to connect them." />
+  <meta property="og:url" content="http://www.acrogenerator.com/" />
   <!-- Stylesheets -->
   <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
@@ -36,12 +48,14 @@
   <script src="bower_components/angular-touch/angular-touch.min.js"></script>
   <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
   <script src="bower_components/moment/min/moment.min.js"></script>
+  <script src="bower_components/ng-file-upload/ng-file-upload.min.js"></script>
   <!-- Dependencies -->
   <script src="bower_components/ng-lodash/build/ng-lodash.js"></script>
   <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
   <!-- Working Files -->
   <script src="app/app.js"></script>
   <script src="app/root/root_ctrl.js"></script>
+  <script src="app/contact/contact_ctrl.js"></script>
   <script src="app/root/positions_services.js"></script>
   <script src="app/shared_services/confirm.js"></script>
   <script src="app/shared_services/alert.js"></script>
@@ -49,8 +63,9 @@
 
 <body ng-controller="appCtrl" class="light-gray">
   <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MKK6BTK"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MKK6BTK" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
   <!-- End Google Tag Manager (noscript) -->
   <!-- Alert modal -->
   <div class="col-md-12 alert-modal-position align-center">
@@ -62,17 +77,22 @@
   </div>
   <!-- Footer -->
   <div class="footer dark-blue">
-    <div class="margin-left-large margin-top-small margin-right-large">
-      <div class="playfair-font">
+    <div class="margin-left-large margin-top-medium margin-right-large align-right">
+      <span class="playfair-font">
         <a href="http://github.com/dela1000" target="_blank" style="text-decoration:none">
-            Created by dela1000
-          </a>
-      </div>
-      <div class="playfair-font align-right">
+          Created by dela1000 - 
+        </a>
+      </span>
+      <span class="playfair-font">
+        <a ui-sref="/contact" style="text-decoration:none">
+          Contact - 
+        </a>
+      </span>
+      <span class="playfair-font">
         <a href="http://instagram.com/dela1000" target="_blank" style="text-decoration:none">
           {{currentYear}}
         </a>
-      </div>
+      </span>
     </div>
   </div>
 </body>

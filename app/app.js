@@ -4,7 +4,8 @@ var app = angular.module('app', [
     'ngLodash',
     'ngAnimate',
     'ngTouch',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'ngFileUpload'
 
 ]);
 
@@ -27,6 +28,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
             url: '/',
             templateUrl: 'app/root/index.html',
             controller: 'rootController'
+        })
+        .state('/contact', {
+            url: '/contact',
+            templateUrl: 'app/contact/contact.html',
+            controller: 'contactController'
         })
 
     $urlRouterProvider.otherwise("/");
