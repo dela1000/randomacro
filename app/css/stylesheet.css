@@ -221,12 +221,16 @@ h1::first-letter {
     right: 0;
 }
 
+
 /*CONTACT FORM*/
 
 .contact-form {
     max-width: 500px;
 }
 
+.full-width {
+    width: 100%;
+}
 
 /*PADDING*/
 
