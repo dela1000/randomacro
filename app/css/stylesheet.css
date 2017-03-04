@@ -84,6 +84,10 @@ p {
     color: #E74C3C;
 }
 
+.tiny-font {
+    font-size: 9px;
+}
+
 .small-font {
     font-size: 10px;
 }
@@ -139,7 +143,7 @@ h1::first-letter {
 }
 
 .main-section-show {
-    padding-top: 210px;
+    padding-top: 240px;
     padding-bottom: 50px;
 }
 
