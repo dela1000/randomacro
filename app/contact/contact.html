@@ -2,70 +2,71 @@
   <div flex layout="row" layout-align="center center">
     <form name="form">
       <fieldset>
-        <legend class="playfair-font">Submit New Position</legend>
+        <legend class="playfair-font">Submit New Positions</legend>
         <div class="row margin-bottom-large">
           <div class="col-md-3 bold">
-            Name:
+            Your Name:
           </div>
           <div class="col-md-6">
-            <input class="full-width" type="text" name="name" ng-model="name" required>
-            <i ng-show="form.name.$error.required">*required</i>
+            <input class="full-width margin-bottom-small" type="text" name="name" ng-model="name" required>
+            <i class="red-text" ng-show="form.name.$error.required">Required</i>
           </div>
         </div>
         <div class="row margin-bottom-large">
           <div class="col-md-3 bold">
-            Email:
+            Your Email:
           </div>
           <div class="col-md-6">
-            <input class="full-width" type="email" name="email" ng-model="email" required>
-            <i ng-show="form.email.$error.required">*required</i>
+            <input class="full-width margin-bottom-small" type="email" name="email" ng-model="email" required>
+            <i class="red-text" ng-show="form.email.$error.required">Required</i>
           </div>
         </div>
         <div class="row margin-bottom-large">
           <div class="col-md-3 bold">
-            Position Name:
+            The New Position Name:
           </div>
           <div class="col-md-6">
-            <input class="full-width" type="type" name="position" ng-model="position" required>
-            <i ng-show="form.position.$error.required">*required</i>
+            <input class="full-width margin-bottom-small" type="type" name="position" ng-model="position" required>
+            <i class="red-text" ng-show="form.position.$error.required">Required</i>
           </div>
         </div>
         <div class="row margin-bottom-large">
           <div class="col-md-3 bold">
-            Difficulty Level:
+            Its Difficulty Level:
           </div>
           <div class="col-md-6">
-            <input class="full-width" type="type" name="difficulty" ng-model="difficulty" required>
-            <i ng-show="form.difficulty.$error.required">*required</i>
+            <input class="full-width margin-bottom-small" type="type" name="difficulty" ng-model="difficulty" required>
+            <i class="red-text" ng-show="form.difficulty.$error.required">Required</i>
           </div>
         </div>
         <div class="row margin-bottom-large">
           <div class="col-md-3 bold">
-            Image Link:
+            An Image Link of It:
           </div>
           <div class="col-md-6">
-            <input class="full-width" type="type" name="link" ng-model="link" required>
-            <i ng-show="form.link.$error.required">*required</i>
+            <input class="full-width margin-bottom-small" type="type" name="link" ng-model="link" required>
+            <i class="red-text" ng-show="form.link.$error.required">Required</i>
+            <p class="small-font">
+              Please submit square images at least 500px by 500px is size, preferably hosted on imgur.
+            </p>
           </div>
         </div>
       </fieldset>
       <div class="row margin-bottom-large" ng-hide="sending">
-        <div class="col-md-6 bold">
+        <div class="col-xs-6 bold">
           <button class="btn btn-primary btn-sm" ng-disabled="!form.$valid" ng-click="sendMail()">
             Submit
+          </button>
+        </div>
+        <div class="col-xs-6 align-right">
+          <button class="btn btn-info btn-sm" ui-sref="/" style="text-decoration:none">
+            Go Back
           </button>
         </div>
       </div>
 
       <div class="row margin-bottom-large margin-left-tiny" ng-show="sending">
         <button class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span> Sending...</button>
-      </div>
-      <div class="row margin-bottom-large">
-        <div class="col-md-6 align-right">
-          <button class="btn btn-info btn-sm" ui-sref="/" style="text-decoration:none">
-            Go Back
-          </button>
-        </div>
       </div>
     </form>
   </div>

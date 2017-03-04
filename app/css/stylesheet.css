@@ -80,6 +80,10 @@ p {
     color: white;
 }
 
+.red-text {
+    color: #E74C3C;
+}
+
 .small-font {
     font-size: 10px;
 }
@@ -101,7 +105,7 @@ h1::first-letter {
 }
 
 
-/*COLORS - Pallette from https://color.adobe.com/KnotJustNautical-color-theme-2565165/ */
+/*COLORS - Pallette from https://color.adobe.com/Flat-UI-color-theme-2469224/ */
 
 .dark-blue {
     background-color: #2C3E50;

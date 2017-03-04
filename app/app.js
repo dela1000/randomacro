@@ -4,16 +4,14 @@ var app = angular.module('app', [
     'ngLodash',
     'ngAnimate',
     'ngTouch',
-    'ui.bootstrap',
-    'ngFileUpload'
-
+    'ui.bootstrap'
 ]);
 
 var sharedDirectives = angular.module('sharedDirectives', []);
 
-app.controller('appCtrl', function($scope, $rootScope, lodash, alert, confirm) {
+app.controller('appCtrl', function($scope, $rootScope, $location, lodash, alert, confirm) {
     $rootScope.locationUrl = 'http://localhost:8080';
-    $rootScope.locationUrl = 'http://acrogenerator.com';
+    // $rootScope.locationUrl = 'http://acrogenerator.com';
 
     $scope.alert = alert;
 
