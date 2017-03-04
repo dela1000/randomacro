@@ -172,14 +172,19 @@ h1::first-letter {
     cursor: pointer;
 }
 
-.alert-modal {
-    background-color: #FC4349;
-}
-
 .alert-modal-position {
     position: fixed;
     margin-top: 20px;
     z-index: 9999;
+    display: block;
+}
+
+.calm {
+    background-color: #3498DB;
+}
+
+.warning {
+    background-color: #FC4349;
 }
 
 
@@ -231,6 +236,7 @@ h1::first-letter {
 .full-width {
     width: 100%;
 }
+
 
 /*PADDING*/
 

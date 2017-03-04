@@ -101,7 +101,7 @@ app.controller('rootController', function($scope, $window, positionsServices, al
         }
         //If numberInput is bigger than 10, alert to use a smaller number
         if ($scope.formData.numberInput > 10) {
-            alert.addAlert("Take it easy, champ. Pick less than 10")
+            alert.addAlert("Take it easy, champ. Pick less than 10", "warning")
             return;
         }
         //if numberInput is valid and level is selected display data

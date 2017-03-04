@@ -68,8 +68,10 @@
   </noscript>
   <!-- End Google Tag Manager (noscript) -->
   <!-- Alert modal -->
-  <div class="col-md-12 alert-modal-position align-center">
-    <div uib-alert ng-repeat="alt in alert.alerts" ng-class="'alert-' + (alt.type)" close="alert.closeAlert($index)" dismiss-on-timeout="2000" class="alert-modal">{{alt.message}}</div>
+  <div class="full-width align-center">
+    <div class="col-md-12 alert-modal-position">
+      <div uib-alert ng-repeat="alt in alert.alerts" ng-class="alt.type" close="alert.closeAlert($index)" dismiss-on-timeout="2000" class="alert-modal">{{alt.message}}</div>
+    </div>
   </div>
   <!-- Body -->
   <div class="custom-container" ng-controller="rootController">

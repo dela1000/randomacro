@@ -18,14 +18,12 @@ router.get('/', function(request, response) {
 });
 
 router.post('/contactForm', function(req, res) {
-    console.log("+++ 14 routes.js req.body: ", req.body)
-
 
     var mailOptions = {
         from: req.body.email,
         to: secrets.gmailAddress,
         subject: 'Message from ' + req.body.name,
-        text: req.body.name + " " + req.body.email + " " + req.body.position + " " + req.body.difficulty + " " + req.body.link
+        text: "Name: " + req.body.name + " -- Email: " + req.body.email + " -- Position Name: " + req.body.position + " -- Difficulty Level: " + req.body.difficulty + " -- Link: " + req.body.link
     }
 
     transporter.sendMail(mailOptions, function(error, response) {
@@ -34,7 +32,7 @@ router.post('/contactForm', function(req, res) {
             console.log(error);
             res.send(error);
         } else {
-            console.log("Message sent: " + response.message);
+            console.log("Message sent " + response.status);
             res.send(response);
         }
     });
