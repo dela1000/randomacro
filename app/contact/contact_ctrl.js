@@ -14,9 +14,8 @@ app.controller('contactController', function($scope, alert, $http) {
         };
         stringData = JSON.stringify(data);
 
-        $http.post('http://localhost:8080/contactForm', stringData)
+        $http.post('http://acrogenerator.com/contactForm', stringData)
             .then(function(result) {
-                console.log("result: ", JSON.stringify(result, null, "\t"));
                 if(result.status === 200 && result.data.accepted.length > 0){
                     alert.addAlert("We've sent your submission. Thanks!", "calm")
                     delete data;
