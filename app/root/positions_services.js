@@ -123,12 +123,12 @@ app.factory('positionsServices', function($http, $rootScope) {
         "rating": 4.0,
         "image": "/app/assets/images/foottohand.jpg"
     }, {
-        "name": "Extended Foot-to-Hand",
+        "name": "Extended Reverse Foot-to-Hand",
         "difficulty": "advanced",
         "on": "hands",
         "inverted": false,
         "rating": 3.0,
-        "image": "/app/assets/images/extendedfoottohand.jpg"
+        "image": "/app/assets/images/extendedreversefoottohand.jpg"
     }, {
         "name": "Reverse Foot-to-Hand",
         "difficulty": "intermediate",
@@ -183,12 +183,12 @@ app.factory('positionsServices', function($http, $rootScope) {
     //     "image": ""
     // }, 
     {
-        "name": "Hand-to-Hand",
+        "name": "Extended Hand-to-Hand",
         "difficulty": "advanced",
         "on": "hands",
         "inverted": true,
         "rating": 4.0,
-        "image": "/app/assets/images/handtohand.jpg"
+        "image": "/app/assets/images/extendedhandtohand.jpg"
     }, {
         "name": "Couch",
         "difficulty": "intermediate",
