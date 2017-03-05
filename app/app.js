@@ -34,5 +34,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
             controller: 'contactController'
         })
 
+        .state('/positions', {
+            url: '/positions',
+            templateUrl: 'app/positions/positions.html',
+            controller: 'positionsController'
+        })
+
     $urlRouterProvider.otherwise("/");
 })
