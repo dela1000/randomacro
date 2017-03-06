@@ -11,6 +11,13 @@ app.factory('positionsServices', function($http, $rootScope) {
         "rating": 1.0,
         "image": "/app/assets/images/bird.jpg"
     }, {
+        "name": "Reverse Bird",
+        "difficulty": "beginner",
+        "on": "feet",
+        "inverted": false,
+        "rating": 1.0,
+        "image": "/app/assets/images/reversebird.jpg"
+        }, {
         "name": "Throne",
         "difficulty": "beginner",
         "on": "hands and feet",
