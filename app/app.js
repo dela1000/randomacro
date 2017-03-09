@@ -24,7 +24,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
     // Now set up the states
     $stateProvider
         .state('/', {
-            url: '/',
+            url: '/?list',
             templateUrl: 'app/root/index.html',
             controller: 'rootController'
         })
@@ -34,11 +34,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
             controller: 'contactController'
         })
 
-        .state('/positions', {
-            url: '/positions',
-            templateUrl: 'app/positions/positions.html',
-            controller: 'positionsController'
-        })
+    .state('/positions', {
+        url: '/positions',
+        templateUrl: 'app/positions/positions.html',
+        controller: 'positionsController'
+    })
 
     $urlRouterProvider.otherwise("/");
 })

@@ -38,8 +38,11 @@
         </div>
       </div>
       <div class="align-center margin-bottom-medium">
-        <button class="btn btn-primary btn-sm" ng-click="refresh()">Refresh</button>
-        <button ng-class="saved ? 'btn btn-success btn-sm' : 'btn btn-primary btn-sm'" ng-click="saveList()">Save</button>
+        <div class="btn-group" role="group">
+          <button class="btn btn-primary btn-sm" ng-click="refresh()">Refresh</button>
+          <button ng-class="paused ? 'btn btn-success btn-sm' : 'btn btn-primary btn-sm'" ng-click="pausedList()">Pause</button>
+          <button class="btn btn-primary btn-sm" ng-click="saveList()">Save</button>
+        </div>
       </div>
     </div>
     <div ng-show="!showNav" style="height: 50px; width: 500px;">
@@ -55,18 +58,18 @@
         </span>
         <span class="col-md-3">
           <b>
-            Dif:
+            Diff:
           </b>
           <span ng-show="formData.all">
             All
           </span>
-          <span ng-show="formData.diff.beginner">
+        <span ng-show="formData.diff.beginner">
             Beg
           </span>
-          <span ng-show="formData.diff.intermediate">
+        <span ng-show="formData.diff.intermediate">
             Int
           </span>
-          <span ng-show="formData.diff.advanced">
+        <span ng-show="formData.diff.advanced">
             Adv
           </span>
         </span>

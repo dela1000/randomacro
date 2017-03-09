@@ -1,0 +1,68 @@
+<form name="positionForm">
+  <fieldset>
+    <legend class="playfair-font">Submit New Positions</legend>
+    <div class="row margin-bottom-large">
+      <div class="col-md-3 bold">
+        Your Name:
+      </div>
+      <div class="col-md-6">
+        <input class="full-width margin-bottom-small" type="text" name="name" ng-model="name" required>
+        <i class="red-text" ng-show="positionForm.name.$error.required">Required</i>
+      </div>
+    </div>
+    <div class="row margin-bottom-large">
+      <div class="col-md-3 bold">
+        Your Email:
+      </div>
+      <div class="col-md-6">
+        <input class="full-width margin-bottom-small" type="email" name="email" ng-model="email" required>
+        <i class="red-text" ng-show="positionForm.email.$error.required">Required</i>
+      </div>
+    </div>
+    <div class="row margin-bottom-large">
+      <div class="col-md-3 bold">
+        The New Position Name:
+      </div>
+      <div class="col-md-6">
+        <input class="full-width margin-bottom-small" type="type" name="position" ng-model="position" required>
+        <i class="red-text" ng-show="positionForm.position.$error.required">Required</i>
+      </div>
+    </div>
+    <div class="row margin-bottom-large">
+      <div class="col-md-3 bold">
+        Its Difficulty Level:
+      </div>
+      <div class="col-md-6">
+        <input class="full-width margin-bottom-small" type="type" name="difficulty" ng-model="difficulty" required>
+        <i class="red-text" ng-show="positionForm.difficulty.$error.required">Required</i>
+      </div>
+    </div>
+    <div class="row margin-bottom-large">
+      <div class="col-md-3 bold">
+        An Image Link of It:
+      </div>
+      <div class="col-md-6">
+        <input class="full-width margin-bottom-small" type="type" name="link" ng-model="link" required>
+        <i class="red-text" ng-show="positionForm.link.$error.required">Required</i>
+        <p class="small-font">
+          Please submit square images at least 500px by 500px is size, preferably hosted on imgur.
+        </p>
+      </div>
+    </div>
+  </fieldset>
+  <div class="row margin-bottom-large" ng-hide="sending">
+    <div class="col-xs-6 bold">
+      <button class="btn btn-primary btn-sm" ng-disabled="!positionForm.$valid" ng-click="sendPositionMail()">
+        Submit
+      </button>
+    </div>
+    <div class="col-xs-6 align-right">
+      <button class="btn btn-info btn-sm" ui-sref="/" style="text-decoration:none">
+        Go Back
+      </button>
+    </div>
+  </div>
+  <div class="row margin-bottom-large margin-left-tiny" ng-show="sending">
+    <button class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span> Sending...</button>
+  </div>
+</form>

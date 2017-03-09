@@ -1,14 +1,12 @@
 var app = angular.module('app');
 
-app.controller('rootController', function($scope, $window, positionsServices, alert) {
+app.controller('rootController', function($scope, $window, $stateParams, positionsServices, alert, ngClipboard) {
     $scope.formData = {};
     $scope.formData.diff = {
         beginner: true,
         intermediate: false,
         advanced: false
     };
-    $scope.formData.numberInput = "4";
-
 
     $scope.showNav = true;
     $scope.hideNavigation = function() {
@@ -36,7 +34,7 @@ app.controller('rootController', function($scope, $window, positionsServices, al
     }
 
     $scope.$watch('formData.numberInput', function() {
-        selectPositions();
+        // selectPositions();
     })
 
     $scope.$watch('formData.all', function() {
@@ -46,7 +44,7 @@ app.controller('rootController', function($scope, $window, positionsServices, al
             $scope.formData.diff.advanced = false;
         }
 
-        runSelectPositions();
+        // runSelectPositions();
     }, true)
 
     $scope.$watchGroup(['formData.diff.beginner', 'formData.diff.intermediate', 'formData.diff.advanced'], function() {
@@ -62,19 +60,46 @@ app.controller('rootController', function($scope, $window, positionsServices, al
             $scope.formData.all = true;
         }
 
-        runSelectPositions();
+        // runSelectPositions();
     }, true)
 
     $scope.saveList = function() {
-        $scope.saved = !$scope.saved;
+        var arrays = [];
+        _.forEach($scope.positionHolder, function(array) {
+            arrays.push(array)
+        })
+        var flattenArray = _.flattenDeep(arrays);
+
+        var indexesSelected = "";
+        _.forEach(flattenArray, function(selectedPosition) {
+            _.forEach(positionsServices.positionsList, function(positionInList, index) {
+                if (selectedPosition.name === positionInList.name) {
+                    indexesSelected += index + ","
+                }
+            })
+        })
+        indexesSelected = indexesSelected.slice(0, -1);
+        $scope.link = "http://localhost:8080/#!/?list=" + indexesSelected;
+
+        ngClipboard.toClipboard($scope.link);
+        alert.addAlert('A link to this flow has been added to your clipboard', "calm")
+    }
+
+
+
+    $scope.pausedList = function() {
+        $scope.paused = !$scope.paused;
     }
 
     $scope.refresh = function() {
+        if($scope.formData.numberInput === 1){
+            $scope.formData.numberInput = 4;
+        }
         runSelectPositions();
     }
 
     function runSelectPositions() {
-        if ($scope.saved) {
+        if ($scope.paused) {
             return;
         }
 
@@ -87,7 +112,7 @@ app.controller('rootController', function($scope, $window, positionsServices, al
     };
 
     var selectPositions = function() {
-        if ($scope.saved) {
+        if ($scope.paused) {
             return;
         }
         //If there is no numberInput data, clear variables and return
@@ -129,28 +154,39 @@ app.controller('rootController', function($scope, $window, positionsServices, al
             //Number of possible positions
             $scope.possiblePositions = $scope.filteredList.length;
             //randomize the final list
-            var tempRandomizedList = _.shuffle($scope.filteredList);
+            var randomizedList = _.shuffle($scope.filteredList);
             //Depending on what numberInput the user selected, add up to 4 items in each positionHolder, and push rating to ratings scope
-            _.times($scope.formData.numberInput, function(index) {
-                if (index <= 3) {
-                    $scope.positionHolder.firstRowList.push(tempRandomizedList[index])
-                    $scope.ratings.push(tempRandomizedList[index].rating)
-                } else if (index > 3 && index <= 7) {
-                    $scope.positionHolder.secondRowList.push(tempRandomizedList[index])
-                    $scope.ratings.push(tempRandomizedList[index].rating)
-                } else {
-                    $scope.positionHolder.thirdRowList.push(tempRandomizedList[index])
-                    $scope.ratings.push(tempRandomizedList[index].rating)
-                };
-            });
-            //per each positionHolder, set the appropriate class to display the pills correctly width-wise
-            _.forEach($scope.positionHolder, function(list) {
-                    assignPillClass(list, list.length);
-                })
-                //find the mean of all the selected the ratings
-            $scope.difficultyRating = _.mean($scope.ratings);
+            $scope.loadBuckets(randomizedList)
         }
     };
+
+    $scope.loadBuckets = function(list, length) {
+        var times;
+        if (length) {
+            times = length;
+        } else {
+            times = $scope.formData.numberInput;
+        };
+        _.times(times, function(index) {
+            if (index <= 3) {
+                $scope.positionHolder.firstRowList.push(list[index])
+                $scope.ratings.push(list[index].rating)
+            } else if (index > 3 && index <= 7) {
+                $scope.positionHolder.secondRowList.push(list[index])
+                $scope.ratings.push(list[index].rating)
+            } else {
+                $scope.positionHolder.thirdRowList.push(list[index])
+                $scope.ratings.push(list[index].rating)
+            };
+        });
+        //per each positionHolder, set the appropriate class to display the pills correctly width-wise
+        _.forEach($scope.positionHolder, function(list) {
+                assignPillClass(list, list.length);
+            })
+            //find the mean of all the selected the ratings
+        $scope.difficultyRating = _.mean($scope.ratings);
+    }
+
     // HELPER FUNCTIONS
     //Clear all the list and rating variables
     var initVars = function() {
@@ -187,4 +223,25 @@ app.controller('rootController', function($scope, $window, positionsServices, al
             })
         }
     }
+
+    if ($stateParams.list) {
+        initVars();
+        var loadedList = [];
+        _.forEach($stateParams.list, function(listIndex) {
+            var digit = Number(listIndex);
+            if (digit !== NaN) {
+                _.forEach(positionsServices.positionsList, function(position, index) {
+                    if (index === digit) {
+                        loadedList.push(position)
+                    }
+                })
+            }
+        })
+        $scope.showNav = false;
+        $scope.formData.numberInput = loadedList.length;
+        $scope.loadBuckets(loadedList, loadedList.length)
+    } else {
+        $scope.formData.numberInput = "4";
+        runSelectPositions();
+    };
 });
