@@ -2,11 +2,6 @@ var app = angular.module('app');
 
 app.controller('rootController', function($scope, $window, $stateParams, positionsServices, alert, ngClipboard) {
     $scope.formData = {};
-    $scope.formData.diff = {
-        beginner: true,
-        intermediate: false,
-        advanced: false
-    };
 
     $scope.showNav = true;
     $scope.hideNavigation = function() {
@@ -33,18 +28,12 @@ app.controller('rootController', function($scope, $window, $stateParams, positio
         }
     }
 
-    $scope.$watch('formData.numberInput', function() {
-        // selectPositions();
-    })
-
     $scope.$watch('formData.all', function() {
         if ($scope.formData.all) {
             $scope.formData.diff.beginner = false;
             $scope.formData.diff.intermediate = false;
             $scope.formData.diff.advanced = false;
         }
-
-        // runSelectPositions();
     }, true)
 
     $scope.$watchGroup(['formData.diff.beginner', 'formData.diff.intermediate', 'formData.diff.advanced'], function() {
@@ -59,8 +48,6 @@ app.controller('rootController', function($scope, $window, $stateParams, positio
         if (!$scope.formData.diff.beginner && !$scope.formData.diff.intermediate && !$scope.formData.diff.advanced) {
             $scope.formData.all = true;
         }
-
-        // runSelectPositions();
     }, true)
 
     $scope.saveList = function() {
@@ -82,13 +69,13 @@ app.controller('rootController', function($scope, $window, $stateParams, positio
         $scope.link = "http://localhost:8080/#!/?list=" + indexesSelected;
 
         ngClipboard.toClipboard($scope.link);
-        alert.addAlert('A link to this flow has been added to your clipboard', "calm")
+        alert.addAlert('A link to this flow has been added to your clipboard. You may save or share it.', "calm")
     }
 
 
 
-    $scope.pausedList = function() {
-        $scope.paused = !$scope.paused;
+    $scope.lockList = function() {
+        $scope.locked = !$scope.locked;
     }
 
     $scope.refresh = function() {
@@ -99,7 +86,7 @@ app.controller('rootController', function($scope, $window, $stateParams, positio
     }
 
     function runSelectPositions() {
-        if ($scope.paused) {
+        if ($scope.locked) {
             return;
         }
 
@@ -112,7 +99,7 @@ app.controller('rootController', function($scope, $window, $stateParams, positio
     };
 
     var selectPositions = function() {
-        if ($scope.paused) {
+        if ($scope.locked) {
             return;
         }
         //If there is no numberInput data, clear variables and return
@@ -224,10 +211,14 @@ app.controller('rootController', function($scope, $window, $stateParams, positio
         }
     }
 
+    $scope.formData.diff = {};
+
     if ($stateParams.list) {
         initVars();
         var loadedList = [];
-        _.forEach($stateParams.list, function(listIndex) {
+        var test = $stateParams.list.split(",");
+
+        _.forEach(test, function(listIndex) {
             var digit = Number(listIndex);
             if (digit !== NaN) {
                 _.forEach(positionsServices.positionsList, function(position, index) {
@@ -242,6 +233,11 @@ app.controller('rootController', function($scope, $window, $stateParams, positio
         $scope.loadBuckets(loadedList, loadedList.length)
     } else {
         $scope.formData.numberInput = "4";
+        $scope.formData.diff = {
+            beginner: true,
+            intermediate: false,
+            advanced: false
+        };
         runSelectPositions();
     };
 });

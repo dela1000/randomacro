@@ -143,7 +143,7 @@ h1::first-letter {
 }
 
 .main-section-show {
-    padding-top: 240px;
+    padding-top: 250px;
     padding-bottom: 50px;
 }
 
@@ -155,6 +155,11 @@ h1::first-letter {
     position: fixed;
     right: 10px;
     top: 16px;
+}
+
+.small-nav{
+    height: 60px; 
+    width: 500px;
 }
 
 .small-logo-container {

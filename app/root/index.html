@@ -1,12 +1,12 @@
 <nav class="navbar navbar-fixed-top" role="navigation">
   <div class="container-fluid dark-blue white-text">
     <div class="less-nav" ng-click="hideNavigation()">
-      <div ng-show="showNav">
+      <button class="btn btn-primary btn-sm" ng-show="showNav">
         Less
-      </div>
-      <div ng-show="!showNav">
+      </button>
+      <button class="btn btn-primary btn-sm" ng-show="!showNav">
         More
-      </div>
+      </button>
     </div>
     <div ng-show="showNav">
       <h3 class=" align-center playfair-font">
@@ -15,13 +15,13 @@
       <div class="margin-left-largest margin-right-largest">
         <p class="tiny-font align-center">
           <i>
-            Select a number of positions, difficulty levels, and connect them.
+            Select a number of positions, difficulty levels, and try to connect them.
           </i>
         </p>
       </div>
       <div class="align-center">
         <span class="input input--manami">
-        <input class="input_field input_field--manami" type="text" id="input-1" ng-model="formData.numberInput" name="" min="1" max="10" maxlength="2"  autocomplete="off" debounce="1000">
+        <input class="input_field input_field--manami" type="text" id="input-1" ng-model="formData.numberInput" name="" min="1" max="10" maxlength="2"  autocomplete="off" debounce="1000" ng-submit="runSelectPositions()">
         <label class="input_label input_label--manami" for="input-1">
           <span class="input_label-content input_label-content--manami">
             Select a number (from 2 to 10)
@@ -38,14 +38,12 @@
         </div>
       </div>
       <div class="align-center margin-bottom-medium">
-        <div class="btn-group" role="group">
-          <button class="btn btn-primary btn-sm" ng-click="refresh()">Refresh</button>
-          <button ng-class="paused ? 'btn btn-success btn-sm' : 'btn btn-primary btn-sm'" ng-click="pausedList()">Pause</button>
-          <button class="btn btn-primary btn-sm" ng-click="saveList()">Save</button>
-        </div>
+        <button ng-class="locked ? 'btn btn-success btn-sm' : 'btn btn-primary btn-sm'" ng-click="loList()">Lock</button>
+        <button class="btn btn-success" ng-click="refresh()">REFRESH</button>
+        <button class="btn btn-primary btn-sm" ng-click="saveList()">Save Flow</button>
       </div>
     </div>
-    <div ng-show="!showNav" style="height: 50px; width: 500px;">
+    <div ng-show="!showNav" class="small-nav">
       <div class="small-logo-container">
         <span class="small-logo playfair-font col-md-3">
           AG
