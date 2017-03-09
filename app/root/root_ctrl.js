@@ -1,6 +1,6 @@
 var app = angular.module('app');
 
-app.controller('rootController', function($scope, $window, $stateParams, positionsServices, alert, ngClipboard) {
+app.controller('rootController', function($scope, $window, $stateParams, positionsServices, alert, ngClipboard,$location, $anchorScroll) {
     $scope.formData = {};
 
     $scope.showNav = true;
@@ -66,7 +66,7 @@ app.controller('rootController', function($scope, $window, $stateParams, positio
             })
         })
         indexesSelected = indexesSelected.slice(0, -1);
-        $scope.link = "http://localhost:8080/#!/?list=" + indexesSelected;
+        $scope.link = "http://acrogenerator.com/#!/?list=" + indexesSelected;
 
         ngClipboard.toClipboard($scope.link);
         alert.addAlert('A link to this flow has been added to your clipboard. You may save or share it.', "calm")
@@ -79,7 +79,7 @@ app.controller('rootController', function($scope, $window, $stateParams, positio
     }
 
     $scope.refresh = function() {
-        if($scope.formData.numberInput === 1){
+        if ($scope.formData.numberInput === 1) {
             $scope.formData.numberInput = 4;
         }
         runSelectPositions();
@@ -116,6 +116,9 @@ app.controller('rootController', function($scope, $window, $stateParams, positio
             alert.addAlert("Take it easy, champ. Pick less than 10", "warning")
             return;
         }
+
+        $location.hash('top');
+        $anchorScroll();
         //if numberInput is valid and level is selected display data
         if ($scope.formData.numberInput) {
 
