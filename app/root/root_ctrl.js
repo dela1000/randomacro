@@ -72,8 +72,6 @@ app.controller('rootController', function($scope, $window, $stateParams, positio
         alert.addAlert('A link to this flow has been added to your clipboard. You may save or share it.', "calm")
     }
 
-
-
     $scope.lockList = function() {
         $scope.locked = !$scope.locked;
     }

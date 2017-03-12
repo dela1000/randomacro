@@ -236,6 +236,20 @@ app.factory('positionsServices', function($http, $rootScope) {
         "inverted": true,
         "rating": 3.0,
         "image": "/app/assets/images/bicepstand.jpg"
+    }, {
+        "name": "Hand to Hand",
+        "difficulty": "advanced",
+        "on": "hands",
+        "inverted": true,
+        "rating": 5.0,
+        "image": "/app/assets/images/handtohand.jpg"
+    }, {
+        "name": "Side Back Bird",
+        "difficulty": "advanced",
+        "on": "feet",
+        "inverted": false,
+        "rating": 4.0,
+        "image": "/app/assets/images/freesidebackbird.jpg"
     }];
 
     return services;

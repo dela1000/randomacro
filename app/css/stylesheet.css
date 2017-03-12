@@ -144,11 +144,12 @@ h1::first-letter {
 
 .main-section-show {
     padding-top: 250px;
-    padding-bottom: 50px;
+    padding-bottom: 53px;
 }
 
 .main-section-hide {
     padding-top: 80px;
+    padding-bottom: 53px;
 }
 
 .less-nav {
