@@ -1,73 +1,135 @@
 <div class="container-fluid contact-form margin-top-immense margin-bottom-immense">
-  <div flex layout="row" layout-align="center center">
-    <form name="form">
-      <fieldset>
-        <legend class="playfair-font">Submit New Positions</legend>
-        <div class="row margin-bottom-large">
-          <div class="col-md-3 bold">
-            Your Name:
+  <legend class="playfair-font">Contact</legend>
+  <div flex layout="row" layout-align="center">
+    <div class="btn-group" uib-dropdown>
+      <button id="btn-append-to-to-body" type="button" class="btn btn-primary" uib-dropdown-toggle>
+        Select Contact Form <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu capitalize" uib-dropdown-menu role="menu" aria-labelledby="btn-append-to-single-button">
+        <li role="menuitem" ng-repeat="item in options" ng-click="selectionMade(item.id)"><a>{{item.name}}</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="margin-top-large">
+    <div ng-show="selectionView === 'position'">
+      <form name="positionForm">
+        <fieldset>
+          <legend class="playfair-font">Submit New Positions</legend>
+          <div class="row margin-bottom-large">
+            <div class="col-md-3 bold">
+              Your Name:
+            </div>
+            <div class="col-md-6">
+              <input class="full-width margin-bottom-small" type="text" name="name" ng-model="posForm.name" required>
+              <i class="red-text" ng-show="positionForm.name.$error.required">Required</i>
+            </div>
           </div>
-          <div class="col-md-6">
-            <input class="full-width margin-bottom-small" type="text" name="name" ng-model="name" required>
-            <i class="red-text" ng-show="form.name.$error.required">Required</i>
+          <div class="row margin-bottom-large">
+            <div class="col-md-3 bold">
+              Your Email:
+            </div>
+            <div class="col-md-6">
+              <input class="full-width margin-bottom-small" type="email" name="email" ng-model="posForm.email" required>
+              <i class="red-text" ng-show="positionForm.email.$error.required">Required</i>
+            </div>
+          </div>
+          <div class="row margin-bottom-large">
+            <div class="col-md-3 bold">
+              The New Position Name:
+            </div>
+            <div class="col-md-6">
+              <input class="full-width margin-bottom-small" type="type" name="position" ng-model="posForm.position" required>
+              <i class="red-text" ng-show="positionForm.position.$error.required">Required</i>
+            </div>
+          </div>
+          <div class="row margin-bottom-large">
+            <div class="col-md-3 bold">
+              Its Difficulty Level:
+            </div>
+            <div class="col-md-6">
+              <input class="full-width margin-bottom-small" type="type" name="difficulty" ng-model="posForm.difficulty" required>
+              <i class="red-text" ng-show="positionForm.difficulty.$error.required">Required</i>
+            </div>
+          </div>
+          <div class="row margin-bottom-large">
+            <div class="col-md-3 bold">
+              An Image Link of It:
+            </div>
+            <div class="col-md-6">
+              <input class="full-width margin-bottom-small" type="type" name="link" ng-model="posForm.link" required>
+              <i class="red-text" ng-show="positionForm.link.$error.required">Required</i>
+              <p class="small-font">
+                Please submit square images at least 500px by 500px is size, preferably hosted on imgur.
+              </p>
+            </div>
+          </div>
+        </fieldset>
+        <div class="row margin-bottom-large" ng-hide="sending">
+          <div class="col-xs-6 bold">
+            <button class="btn btn-primary btn-sm" ng-disabled="!positionForm.$valid" ng-click="sendPositionMail()">
+              Submit
+            </button>
+          </div>
+          <div class="col-xs-6 align-right">
+            <button class="btn btn-info btn-sm" ui-sref="/" style="text-decoration:none">
+              Go Back
+            </button>
           </div>
         </div>
-        <div class="row margin-bottom-large">
-          <div class="col-md-3 bold">
-            Your Email:
+        <div class="row margin-bottom-large margin-left-tiny" ng-show="sending">
+          <button class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span> Sending...</button>
+        </div>
+      </form>
+    </div>
+    <div ng-show="selectionView === 'suggestion'">
+      <form name="contactForm">
+        <fieldset>
+          <legend class="playfair-font">Submit Suggestion</legend>
+          <div class="row margin-bottom-large">
+            <div class="col-md-3 bold">
+              Your Name:
+            </div>
+            <div class="col-md-6">
+              <input class="full-width margin-bottom-small" type="text" name="name" ng-model="suggForm.name" required>
+              <i class="red-text" ng-show="contactForm.name.$error.required">Required</i>
+            </div>
           </div>
-          <div class="col-md-6">
-            <input class="full-width margin-bottom-small" type="email" name="email" ng-model="email" required>
-            <i class="red-text" ng-show="form.email.$error.required">Required</i>
+          <div class="row margin-bottom-large">
+            <div class="col-md-3 bold">
+              Your Email:
+            </div>
+            <div class="col-md-6">
+              <input class="full-width margin-bottom-small" type="email" name="email" ng-model="suggForm.email" required>
+              <i class="red-text" ng-show="contactForm.email.$error.required">Required</i>
+            </div>
+          </div>
+          <div class="row margin-bottom-large">
+            <div class="col-md-3 bold">
+              Message:
+            </div>
+            <div class="col-md-6">
+              <textarea class="full-width margin-bottom-small" type="type" name="message" ng-model="suggForm.message" required></textarea>
+              <i class="red-text" ng-show="contactForm.message.$error.required">Required</i>
+            </div>
+          </div>
+        </fieldset>
+        <div class="row margin-bottom-large" ng-hide="sending">
+          <div class="col-xs-6 bold">
+            <button class="btn btn-primary btn-sm" ng-disabled="!contactForm.$valid" ng-click="sendSuggestionMail()">
+              Submit
+            </button>
+          </div>
+          <div class="col-xs-6 align-right">
+            <button class="btn btn-info btn-sm" ui-sref="/" style="text-decoration:none">
+              Go Back
+            </button>
           </div>
         </div>
-        <div class="row margin-bottom-large">
-          <div class="col-md-3 bold">
-            The New Position Name:
-          </div>
-          <div class="col-md-6">
-            <input class="full-width margin-bottom-small" type="type" name="position" ng-model="position" required>
-            <i class="red-text" ng-show="form.position.$error.required">Required</i>
-          </div>
+        <div class="row margin-bottom-large margin-left-tiny" ng-show="sending">
+          <button class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span> Sending...</button>
         </div>
-        <div class="row margin-bottom-large">
-          <div class="col-md-3 bold">
-            Its Difficulty Level:
-          </div>
-          <div class="col-md-6">
-            <input class="full-width margin-bottom-small" type="type" name="difficulty" ng-model="difficulty" required>
-            <i class="red-text" ng-show="form.difficulty.$error.required">Required</i>
-          </div>
-        </div>
-        <div class="row margin-bottom-large">
-          <div class="col-md-3 bold">
-            An Image Link of It:
-          </div>
-          <div class="col-md-6">
-            <input class="full-width margin-bottom-small" type="type" name="link" ng-model="link" required>
-            <i class="red-text" ng-show="form.link.$error.required">Required</i>
-            <p class="small-font">
-              Please submit square images at least 500px by 500px is size, preferably hosted on imgur.
-            </p>
-          </div>
-        </div>
-      </fieldset>
-      <div class="row margin-bottom-large" ng-hide="sending">
-        <div class="col-xs-6 bold">
-          <button class="btn btn-primary btn-sm" ng-disabled="!form.$valid" ng-click="sendMail()">
-            Submit
-          </button>
-        </div>
-        <div class="col-xs-6 align-right">
-          <button class="btn btn-info btn-sm" ui-sref="/" style="text-decoration:none">
-            Go Back
-          </button>
-        </div>
-      </div>
+      </form>
 
-      <div class="row margin-bottom-large margin-left-tiny" ng-show="sending">
-        <button class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span> Sending...</button>
-      </div>
-    </form>
+    </div>
   </div>
 </div>

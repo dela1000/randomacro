@@ -10,19 +10,18 @@ var transporter = nodemailer.createTransport({
     }
 });
 
-
 //Routes
 //Home route
 router.get('/', function(request, response) {
     response.status(202).sendFile(path.resolve("app/index.html"));
 });
 
-router.post('/contactForm', function(req, res) {
+router.post('/contactPositionForm', function(req, res) {
 
     var mailOptions = {
         from: req.body.email,
         to: secrets.gmailAddress,
-        subject: 'Message from ' + req.body.name,
+        subject: 'Position from ' + req.body.name + ' at ' + req.body.email,
         text: "Name: " + req.body.name + " -- Email: " + req.body.email + " -- Position Name: " + req.body.position + " -- Difficulty Level: " + req.body.difficulty + " -- Link: " + req.body.link
     }
 
@@ -32,12 +31,31 @@ router.post('/contactForm', function(req, res) {
             console.log(error);
             res.send(error);
         } else {
-            console.log("Message sent " + response.status);
+            console.log("Message sent");
             res.send(response);
         }
     });
+});
 
+router.post('/contactSuggestionForm', function(req, res) {
 
+    var mailOptions = {
+        from: req.body.email,
+        to: secrets.gmailAddress,
+        subject: 'Suggestion from ' + req.body.name + 'at' + req.body.email,
+        text: "Name: " + req.body.name + " -- Email: " + req.body.email + " -- Message: " + req.body.message
+    }
+
+    transporter.sendMail(mailOptions, function(error, response) {
+        if (error) {
+            console.log("error");
+            console.log(error);
+            res.send(error);
+        } else {
+            console.log("Message sent");
+            res.send(response);
+        }
+    });
 });
 
 module.exports = router;
