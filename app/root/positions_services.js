@@ -244,7 +244,7 @@ app.factory('positionsServices', function($http, $rootScope) {
         "rating": 5.0,
         "image": "/app/assets/images/handtohand.jpg"
     }, {
-        "name": "Side Back Bird",
+        "name": "Mono Side Back Bird",
         "difficulty": "advanced",
         "on": "feet",
         "inverted": false,
