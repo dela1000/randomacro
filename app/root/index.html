@@ -2,10 +2,10 @@
   <div class="container-fluid dark-blue white-text">
     <div class="less-nav" ng-click="hideNavigation()">
       <button class="btn btn-primary btn-sm" ng-show="showNav">
-        Less
+        Hide
       </button>
       <button class="btn btn-primary btn-sm" ng-show="!showNav">
-        More
+        Show
       </button>
     </div>
     <div ng-show="showNav">
@@ -44,17 +44,22 @@
       </div>
     </div>
     <div ng-show="!showNav" class="small-nav">
-      <div class="small-logo-container">
-        <span class="small-logo playfair-font col-md-3">
+      <div class="small-logo-container row">
+        <span class="col-md-2 no-padding margin-left-medium">
+          <button class="btn btn-success btn-sm" ng-click="refresh()">
+            REFRESH
+          </button>
+        </span>
+        <span class="small-logo playfair-font col-md-2 padding-left-small padding-right-zero">
           AG
         </span>
-        <span class="col-md-3">
+        <span class="col-md-2 padding-left-tiny padding-right-tiny">
           <b>
             Pos:
           </b>
           {{formData.numberInput}}
         </span>
-        <span class="col-md-3">
+        <span class="col-md-2 padding-left-tiny">
           <b>
             Diff:
           </b>

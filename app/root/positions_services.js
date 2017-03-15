@@ -250,6 +250,13 @@ app.factory('positionsServices', function($http, $rootScope) {
         "inverted": false,
         "rating": 4.0,
         "image": "/app/assets/images/freesidebackbird.jpg"
+    }, {
+        "name": "Reverse Back Plank on Hands",
+        "difficulty": "intermediate",
+        "on": "hands",
+        "inverted": false,
+        "rating": 2.0,
+        "image": "/app/assets/images/reversebackplankonhands.jpg"
     }];
 
     return services;

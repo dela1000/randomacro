@@ -171,6 +171,7 @@ h1::first-letter {
 
 .small-logo {
     font-size: 22px;
+    top: 2px;
 }
 
 .footer {
