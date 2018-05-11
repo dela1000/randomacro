@@ -1,5 +1,5 @@
 <nav class="navbar navbar-fixed-top" role="navigation" id="top">
-  <div class="container-fluid dark-blue white-text">
+  <div class="container-fluid dark-gray white-text">
     <div class="less-nav" ng-click="hideNavigation()">
       <button class="btn btn-primary btn-sm" ng-show="showNav">
         Hide
@@ -9,17 +9,23 @@
       </button>
     </div>
     <div ng-show="showNav">
-      <h3 class=" align-center playfair-font">
+      <h3 class=" align-center playfair">
         Acro Generator
       </h3>
       <div class="margin-left-largest margin-right-largest">
         <p class="tiny-font align-center">
-          <i>
-            Select a number of positions, difficulty levels, and try to connect them.
-          </i>
+          <i>Select a number of positions, difficulty levels, and try to connect them.</i>
         </p>
       </div>
       <div class="align-center">
+        <div>Select a number (from 2 to 10)</div>
+        <div>
+          <div class="flex number-holder" ng-repeat="item in numbers">
+            <div ng-click="numberSelected(item.number)">{{item.number}}</div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="align-center">
         <span class="input input--manami">
         <input class="input_field input_field--manami" type="text" id="input-1" ng-model="formData.numberInput" name="" min="1" max="10" maxlength="2"  autocomplete="off" debounce="1000" ng-submit="runSelectPositions()">
         <label class="input_label input_label--manami" for="input-1">
@@ -28,7 +34,7 @@
           </span>
         </label>
         </span>
-      </div>
+      </div> -->
       <div class="margin-bottom-medium align-center">
         <div class="btn-group" role="group">
           <button type="button" ng-class="formData.all ? 'btn btn-success btn-sm' : 'btn btn-primary btn-sm'" ng-click="levelAll()">All</button>
@@ -50,7 +56,7 @@
             REFRESH
           </button>
         </span>
-        <span class="small-logo playfair-font col-md-2 padding-left-small padding-right-zero">
+        <span class="small-logo alice col-md-2 padding-left-small padding-right-zero">
           AG
         </span>
         <span class="col-md-2 padding-left-tiny padding-right-tiny">
@@ -84,8 +90,8 @@
   <div class="row margin-bottom-large">
     <div ng-repeat="positions in positionHolder track by $index">
       <div ng-repeat="position in positions track by $index">
-        <div ng-class="position.class" class="margin-bottom-large">
-          <div class="positionPill dropshadow">
+        <div ng-class="position.class" class="padding-left-tiny padding-right-tiny margin-bottom-medium">
+          <div class="positionPill">
             <div class="position-details">
               <div class="name huge-font align-center">
                 {{position.name}}
@@ -94,7 +100,7 @@
                 <i>{{position.difficulty}}</i>
               </div>
             </div>
-            <div class="position-image" ng-if="position.image">
+            <div class="position-image sepia" ng-if="position.image">
               <img ng-src="{{position.image}}"></img>
             </div>
           </div>

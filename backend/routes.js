@@ -1,12 +1,12 @@
 var router = require('express').Router();
 var path = require('path');
-var secrets = require('./secrets.js');
+// var secrets = require('./secrets.js');
 var nodemailer = require('nodemailer');
 var transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
-        user: secrets.gmailAddress,
-        pass: secrets.gmailPass
+        // user: secrets.gmailAddress,
+        // pass: secrets.gmailPass
     }
 });
 

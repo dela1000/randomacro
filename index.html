@@ -34,13 +34,8 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
-  <link rel="stylesheet" type="text/css" href="app/css/stylesheet.css">
-  <link rel="stylesheet" type="text/css" href="app/css/custom.css">
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:900i" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Fauna+One" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Alice|Playfair+Display:400,900" rel="stylesheet">
   <!-- Frameworks -->
   <script src="bower_components/angular/angular.min.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
@@ -52,27 +47,27 @@
   <!-- Dependencies -->
   <script src="bower_components/ng-lodash/build/ng-lodash.js"></script>
   <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-  <!-- Working Files -->
-  <script src="app/app.js"></script>
-  <script src="app/root/root_ctrl.js"></script>
-  <script src="app/contact/contact_ctrl.js"></script>
-  <script src="app/positions/positions_ctrl.js"></script>
-  <script src="app/root/positions_services.js"></script>
-  <script src="app/shared_services/confirm.js"></script>
-  <script src="app/shared_services/alert.js"></script>
-  <script src="app/shared_services/ngClipboard.js"></script>
+  <!-- Minified App -->
+  <script src="minified/app.js"></script>
+  <link rel="stylesheet" type="text/css" href="minified/styles.css">
 </head>
 
 <body ng-controller="appCtrl" class="light-gray">
   <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  (function(i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function() {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-    ga('create', 'UA-92994582-1', 'auto');
-    ga('send', 'pageview');
-
+  ga('create', 'UA-92994582-1', 'auto');
+  ga('send', 'pageview');
   </script>
   <!-- Alert modal -->
   <div class="full-width align-center">
@@ -85,33 +80,33 @@
     <ui-view></ui-view>
   </div>
   <!-- Footer -->
-  <div class="footer dark-blue">
+  <div class="footer dark-gray">
     <div class="margin-left-large margin-top-medium margin-right-large align-right">
-      <span class="playfair-font">
+      <span class="alice">
         <a href="http://github.com/dela1000/randomacro" target="_blank" style="text-decoration:none; color:white;">
           By dela1000 
         </a>
       </span>
-      <span class="playfair-font" style="color:white;">
+      <span class="alice" style="color:white;">
         ~
       </span>
-      <span class="playfair-font">
+      <span class="alice">
         <a ui-sref="/positions" style="text-decoration:none; color:white;">
           Positions 
         </a>
       </span>
-      <span class="playfair-font" style="color:white;">
+      <span class="alice" style="color:white;">
         ~
       </span>
-      <span class="playfair-font">
+      <span class="alice">
         <a ui-sref="/contact" style="text-decoration:none; color:white;">
           Submit 
         </a>
       </span>
-      <span class="playfair-font" style="color:white;">
+      <span class="alice" style="color:white;">
         ~
       </span>
-      <span class="playfair-font">
+      <span class="alice">
         <a href="http://instagram.com/dela1000" target="_blank" style="text-decoration:none; color:white;">
           {{currentYear}}
         </a>
