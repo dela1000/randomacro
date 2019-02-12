@@ -32,14 +32,26 @@ html {
 
 
 /*FONTS*/
-.playfair {
+
+.playfair-font {
     font-family: 'Playfair Display', serif;
 }
 
-.alice{
-    font-family: 'Alice', serif;
+.fauna-font {
+    font-family: 'Fauna One', serif;
 }
 
+.open-sans-font {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.roboto-font {
+    font-family: 'Roboto', sans-serif;
+}
+
+p {
+    font-family: 'Fauna One', serif;
+}
 
 .bold {
     font-weight: bold;
@@ -99,8 +111,8 @@ h1::first-letter {
 
 /*COLORS - Pallette from https://color.adobe.com/Flat-UI-color-theme-2469224/ */
 
-.dark-gray {
-    background-color: #272727;
+.dark-blue {
+    background-color: #2C3E50;
 }
 
 .red {
@@ -121,12 +133,6 @@ h1::first-letter {
 
 .white {
     background-color: #ffffff;
-}
-
-.sepia {
-    -webkit-filter: sepia(45%);
-    /* Safari 6.0 - 9.0 */
-    filter: sepia(45%);
 }
 
 
@@ -181,13 +187,6 @@ h1::first-letter {
     cursor: pointer;
 }
 
-.flex { display: flex; }
-
-.number-holder {
-    width: 30px;
-    height: 30px;
-}
-
 .alert-modal-position {
     position: fixed;
     margin-top: 20px;
@@ -208,16 +207,19 @@ h1::first-letter {
 
 .positionPill {
     width: auto;
+    border: 1px solid #dadada;
+    border-radius: 25px;
     background-color: #FFFFFF;
 }
 
 .position-details {
-    height: 60px;
+    height: 65px;
 }
 
 .positionPill .name {
+    height: 45px;
     font-weight: bold;
-    margin-top: 5px;
+    margin-top: 15px;
     margin-left: 20px;
     margin-right: 20px;
 }
@@ -233,6 +235,7 @@ h1::first-letter {
 .position-image img {
     width: 100%;
     position: relative;
+    border-radius: 0px 0px 23px 23px;
     margin: auto;
     left: 0;
     right: 0;
