@@ -12,6 +12,7 @@ var sharedDirectives = angular.module('sharedDirectives', []);
 app.controller('appCtrl', function($scope, $rootScope, $location, lodash, alert, confirm) {
     $rootScope.locationUrl = 'http://localhost:8080';
     // $rootScope.locationUrl = 'http://acrogenerator.com';
+    
 
     $scope.alert = alert;
 
@@ -32,6 +33,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
             url: '/contact',
             templateUrl: 'app/contact/contact.html',
             controller: 'contactController'
+        })
+        .state('/privacy', {
+            url: '/privacy',
+            templateUrl: 'app/privacy/privacy.html',
         })
 
     .state('/positions', {
